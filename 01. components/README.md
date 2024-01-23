@@ -4,7 +4,7 @@
 
 주어진 class component를 function component로 리팩터링합니다.
 
-```react
+```js
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +32,7 @@ class App extends Component {
 
 주어진 class component의 메서드를 고려하여, react의 hook을 이용한 function component로 리팩터링 해봅니다.
 
-```react
+```js
 class App extends Component {
   constructor(props) {
     super(props);
@@ -73,7 +73,7 @@ class App extends Component {
 
 커스텀 훅을 이용하여 UI와 비즈니스 로직을 분리하여 컴포넌트를 만들어봅니다.
 
-```react
+```js
 import React, { Component } from "react";
 
 class App extends Component {
@@ -111,7 +111,7 @@ export default App;
 
 원하는 이미지를 검색하는 애플리케이션 함수형으로 만들고, 커스텀 훅까지 분리해봅니다.
 
-```react
+```js
 const API_KEY = "35260376-5ce7ccb608fac3a56eefe111d";
 
 class App extends Component {
