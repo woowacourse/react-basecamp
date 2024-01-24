@@ -69,7 +69,7 @@ class App extends Component {
 
 ```
 
-## step3. customHook을 만드는 컴포넌트 만들어보기
+## step3. customHook을 이용하는 컴포넌트 만들어보기
 
 커스텀 훅을 이용하여 UI와 비즈니스 로직을 분리하여 컴포넌트를 만들어봅니다.
 
