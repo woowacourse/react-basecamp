@@ -1,0 +1,8 @@
+{
+  "name": "react-basecamp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ooherin/react-basecamp.git",
+  "author": "ooherin <555ohr@naver.com>",
+  "license": "MIT"
+}
