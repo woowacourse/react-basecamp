@@ -3,5 +3,5 @@ interface DisplayProps {
 }
 
 export default function Display({ placeholder }: DisplayProps) {
-  return <input placeholder={placeholder}></input>;
+  return <input placeholder={placeholder}>hi</input>;
 }
