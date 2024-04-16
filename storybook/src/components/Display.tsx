@@ -1,3 +1,10 @@
+import Input from "./Input";
+
 export default function Display() {
-  return <div>0</div>;
+  return <div>
+    <Input />
+    <Input />
+    <Input />
+    <Input />
+  </div>;
 }
