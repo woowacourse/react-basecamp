@@ -51,3 +51,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 ```
+
+### 페이먼츠 앱의 가장 핵심 기능을 1줄로 정의
+
+인풋값을 즉각적으로 카드 컴포넌트로 보여주기
