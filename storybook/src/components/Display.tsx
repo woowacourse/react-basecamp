@@ -1,3 +1,7 @@
-export default function Display() {
-  return <div>2</div>;
+interface DisplayProps {
+  placeholder: string;
+}
+
+export default function Display({ placeholder }: DisplayProps) {
+  return <input placeholder={placeholder}></input>;
 }
