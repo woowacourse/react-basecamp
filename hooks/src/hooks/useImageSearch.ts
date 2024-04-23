@@ -12,10 +12,10 @@ export interface Image {
 interface PixabayResponse {
   hits: Image[];
 }
-const useImageSearch = (keyword: string) => {
+const useImageSearch = (keyword: string, page: number) => {
   const url = `https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(
     keyword
-  )}&image_type=photo&pretty=true`;
+  )}&page=${page}&image_type=photo&pretty=true`;
 
   const [images, setImages] = useState<Image[]>([]);
 
