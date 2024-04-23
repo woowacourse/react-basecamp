@@ -13,9 +13,9 @@ interface ImageSearchResult {
   hits: Image[];
 }
 
-const useImageSearch = (keyword: string) => {
+const useImageSearch = (keyword: string, page: number) => {
   const [images, setImages] = useState<Image[]>([]);
-  const { data, isLoading, error } = useFetch<ImageSearchResult>(`https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(keyword)}&image_type=photo&pretty=true`);
+  const { data, isLoading, error } = useFetch<ImageSearchResult>(`https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(keyword)}&page=${page}&image_type=photo&pretty=true`);
 
   useEffect(() => {
     if (data) {
