@@ -1,7 +1,7 @@
-import usePagination from "./usePagination";
-import useFetch from "./useFetch";
 import { Image, ResponseImagesType } from "../components/ImageGallery";
 import { useEffect, useState } from "react";
+import usePagination from "./usePagination";
+import useFetch from "./useFetch";
 
 const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
 
