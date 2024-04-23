@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useImageSearch from "../hooks/useImageSearch";
 
 const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
 
@@ -9,25 +10,8 @@ interface Image {
 }
 
 const ImageGallery: React.FC = () => {
-  const [images, setImages] = useState<Image[]>([]);
   const [keyword, setKeyword] = useState("");
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await fetch(
-          `https://pixabay.com/api/?key=${API_KEY}&q=${keyword}`
-        );
-        return response.json();
-      } catch (error) {
-        console.error("Failed to fetch images:", error);
-      }
-    };
-
-    if (keyword) {
-      fetchImages().then((data) => setImages(data.hits));
-    }
-  }, [keyword]);
+  const { images } = useImageSearch(keyword);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
