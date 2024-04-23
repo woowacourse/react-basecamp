@@ -14,8 +14,10 @@ interface Image {
 }
 const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
 
-const useImageSearch = (keyword: string) => {
-  const url = `https://pixabay.com/api/?key=${API_KEY}&q=${keyword}`;
+const useImageSearch = (keyword: string, page: number) => {
+  const url = `https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(
+    keyword
+  )}&page=${page}`;
   const [images, setImages] = useState<Image[]>([]);
   const { data, isLoading, error } = useFetch<FetchedImage>(url);
   useEffect(() => {
