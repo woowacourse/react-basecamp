@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import useImageSearch from "../hooks/useImageSearch";
-import usePagination from "../hooks/usePagination";
+import useImageSearchWithPagination from "../hooks/useImageSearchWithPagination";
 
 const ImageGallery: React.FC = () => {
   const [keyword, setKeyword] = useState("");
-  const { currentPage, goToNextPage, goToPrevPage } = usePagination();
-  const { images, isLoading, error } = useImageSearch(keyword, currentPage);
+  const { images, currentPage, goToNextPage, goToPrevPage, isLoading, error } =
+    useImageSearchWithPagination(keyword);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
