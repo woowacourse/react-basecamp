@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import useFetch from "./useFetch";
+import usePagination from "./usePagination";
 
 const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
 
@@ -13,12 +14,13 @@ interface ImageSearchResult {
   hits: Image[];
 }
 
-const useImageSearch = (keyword: string, page: number) => {
+const useImageSearchWithPagination = (keyword: string) => {
   const [images, setImages] = useState<Image[]>([]);
+  const { currentPage, goToNextPage, goToPrevPage } = usePagination();
   const { data, isLoading, error } = useFetch<ImageSearchResult>(
     `https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(
       keyword
-    )}&page=${page}&image_type=photo&pretty=true`
+    )}&page=${currentPage}&image_type=photo&pretty=true`
   );
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const useImageSearch = (keyword: string, page: number) => {
     }
   }, [data]);
 
-  return { images, isLoading, error };
+  return { images, currentPage, goToNextPage, goToPrevPage, isLoading, error };
 };
 
-export default useImageSearch;
+export default useImageSearchWithPagination;
