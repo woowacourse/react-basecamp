@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 import useImage from "../hooks/useImage";
+import useImageSearchWithPagination from "../hooks/useImageSearchWithPagination";
+
+const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
+
+const DEFAULT_API_URL = "https://pixabay.com/api/?key=";
 
 interface Image {
   id: number;
@@ -9,7 +14,14 @@ interface Image {
 
 const ImageGallery: React.FC = () => {
   const [keyword, setKeyword] = useState("");
-  const { images } = useImage(keyword);
+  const {
+    images,
+    currentPage,
+    handleNextPage,
+    handlePreviousPage,
+    isLoading,
+    error,
+  } = useImageSearchWithPagination(keyword);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,6 +34,13 @@ const ImageGallery: React.FC = () => {
         <h1>Image Gallery</h1>
       </header>
       <section>
+        <div>
+          <span>Page: {currentPage}</span>
+          <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+            Previous Page
+          </button>
+          <button onClick={handleNextPage}>Next Page</button>
+        </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="searchKeyword">검색:</label>
           <input
@@ -34,6 +53,8 @@ const ImageGallery: React.FC = () => {
         </form>
       </section>
       <section>
+        {isLoading && <p>Loading...</p>}
+        {error && <p>Error: {error.message}</p>}
         {images.map((image) => (
           <article key={image.id}>
             <img src={image.webformatURL} alt={image.tags} />
