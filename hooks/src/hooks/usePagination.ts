@@ -8,9 +8,7 @@ const usePagination = (initialPage: number = 1) => {
   };
 
   const goToPrevPage = () => {
-    setCurrentPage((prevPage) =>
-      initialPage <= prevPage - 1 ? initialPage : prevPage - 1
-    );
+    setCurrentPage((prevPage) => Math.max(initialPage, prevPage - 1));
   };
 
   return { currentPage, goToNextPage, goToPrevPage };

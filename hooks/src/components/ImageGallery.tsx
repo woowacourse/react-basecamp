@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import useImageSearch from "../hooks/useImageSearch";
+import usePagination from "../hooks/usePagination";
 
 const ImageGallery: React.FC = () => {
   const [keyword, setKeyword] = useState("");
-  const { images } = useImageSearch(keyword);
+  const { currentPage, goToNextPage, goToPrevPage } = usePagination();
+  const { images, isLoading, error } = useImageSearch(keyword, currentPage);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,6 +30,15 @@ const ImageGallery: React.FC = () => {
         </form>
       </section>
       <section>
+        <p>현재 페이지 : {currentPage}</p>
+        <button onClick={goToPrevPage} disabled={currentPage <= 1}>
+          이전 페이지
+        </button>
+        <button onClick={goToNextPage}>다음 페이지</button>
+      </section>
+      <section>
+        {isLoading && <p>이미지를 로딩 중입니다...</p>}
+        {error && <p>에러가 발생했습니다: {error.message}</p>}
         {images.map((image) => (
           <article key={image.id}>
             <img src={image.webformatURL} alt={image.tags} />
