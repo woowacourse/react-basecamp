@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import usePagination from "../hooks/usePagination";
-import useImageSearch from "../hooks/useImageSearch";
+import useImageaSearchWithPagination from "../hooks/useImageSearchWithPagination";
 export interface Image {
   id: number;
   webformatURL: string;
   tags: string;
 }
 
-export interface ResponseType {
+export interface ResponseImagesType {
   total: number;
   totalHits: number;
   hits: Image[];
@@ -15,8 +14,8 @@ export interface ResponseType {
 
 const ImageGallery: React.FC = () => {
   const [keyword, setKeyword] = useState("");
-  const { currentPage, goToPrevPage, goToNextPage } = usePagination(1);
-  const { images, isLoading, error } = useImageSearch(keyword, currentPage);
+  const { images, currentPage, goToNextPage, goToPrevPage, isLoading, error } =
+    useImageaSearchWithPagination(keyword);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
