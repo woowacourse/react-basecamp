@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import useFetch from './useFecth';
 
 const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
 
@@ -8,26 +9,23 @@ interface Image {
   tags: string;
 }
 
+interface ImageSearchResult {
+  hits: Image[];
+}
+
 const useImageSearch = (keyword: string) => {
   const [images, setImages] = useState<Image[]>([]);
+  const { data, isLoading, error } = useFetch<ImageSearchResult>(
+    `https://pixabay.com/api?key=${API_KEY}&$q=${encodeURIComponent(keyword)}&image_type=photo&pretty=true`,
+  );
 
   useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await fetch(`https://pixabay.com/api?key=${API_KEY}&$q=${encodeURIComponent(keyword)}&image_type=photo&pretty=true`);
-        const { hits } = await response.json();
-
-        setImages(hits);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    if (keyword) {
-      fetchImages();
+    if (data) {
+      setImages(data.hits);
     }
-  }, [keyword]);
+  }, [data]);
 
-  return { images };
+  return { images, isLoading, error };
 };
 
 export default useImageSearch;
