@@ -2,7 +2,7 @@
 
 ## 1. Storybook 설치
 
-다음 명령어를 실행하여 Storybook을 설치합니다
+storybook 디렉터리로 이동한 다음, 아래 명령어를 실행하여 Storybook을 설치합니다.
 
 ```sh
 npx sb init
