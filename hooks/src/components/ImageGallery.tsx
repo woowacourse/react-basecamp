@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import useImageSearch from '../hooks/useImageSearch';
+import useImageSearchWithPagination from '../hooks/useImageSearchWithPagination';
 
 const ImageGallery: React.FC = () => {
   const [keyword, setKeyword] = useState('');
-  const { images } = useImageSearch(keyword);
+  const { images, currentPage, goToNextPage, goToPrevPage } =
+    useImageSearchWithPagination(keyword);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,6 +17,13 @@ const ImageGallery: React.FC = () => {
         <h1>Image Gallery</h1>
       </header>
       <section>
+        <div>
+          <span>Page: {currentPage}</span>
+          <button onClick={goToPrevPage} disabled={currentPage === 1}>
+            Previous Page
+          </button>
+          <button onClick={goToNextPage}>Next Page</button>
+        </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor='searchKeyword'>검색:</label>
           <input
