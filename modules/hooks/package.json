@@ -1,7 +1,7 @@
 {
-  "name": "hooks",
-  "version": "0.0.1",
-  "description": "npm modules",
+  "name": "greetings1012-simple-input-hook",
+  "version": "0.0.0",
+  "description": "simple hook for input",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "greetings1012-simple-input-hook": "^0.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
