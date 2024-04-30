@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { useInput } from 'react-basecamp-hook'
+import { useInput } from 'react-basecamp-hooks'
 
 function App() {
   const { value, onChange } = useInput("")

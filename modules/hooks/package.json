@@ -1,6 +1,6 @@
 {
   "name": "react-basecamp-hooks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "npm modules",
   "type": "module",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-basecamp-hook": "^0.0.0",
-    "react-basecamp-hooks": "^0.0.1",
+    "react-basecamp-hooks": "^0.0.2",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
