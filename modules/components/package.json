@@ -1,7 +1,7 @@
 {
-  "name": "compoents",
+  "name": "react-basecamp-modules",
   "version": "0.0.1",
-  "description": "npm modules",
+  "description": "react-basecamp-modules",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
+    "react-basecamp-components": "^0.0.2",
+    "react-basecamp-modules": "^0.0.1",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
