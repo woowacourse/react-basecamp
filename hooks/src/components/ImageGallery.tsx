@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState } from "react";
 import useImageHook from "../hooks/useImageHook";
 
@@ -15,10 +16,14 @@ interface Image {
   webformatURL: string;
   tags: string;
 }
+=======
+import React, { useState } from "react";
+import useImageHook from "../hooks/useImageHook";
+>>>>>>> f1a6b7956acec4827dfd267f6cec6b5825ab0b53
 
 const ImageGallery: React.FC = () => {
-  const [images, setImages] = useState<Image[]>([]);
   const [keyword, setKeyword] = useState("");
+<<<<<<< HEAD
 
   // useEffect를 사용하여 keyword가 변경될 때마다 이미지를 가져오는 로직을 작성해보세요.
   useEffect(() => {
@@ -30,6 +35,9 @@ const ImageGallery: React.FC = () => {
     // 4. keyword가 존재할 때만 fetchImages 함수를 호출하세요.
   }, [keyword]);
 >>>>>>> df1267a743fa51ebdd3ad6fd93c37d872f3bca19
+=======
+  const { images } = useImageHook(keyword);
+>>>>>>> f1a6b7956acec4827dfd267f6cec6b5825ab0b53
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,6 +53,7 @@ const ImageGallery: React.FC = () => {
         <form onSubmit={handleSubmit}>
           <label htmlFor="searchKeyword">검색:</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <input type="text" id="searchKeyword" name="keyword" placeholder="키워드 입력" />
 =======
           <input
@@ -54,6 +63,9 @@ const ImageGallery: React.FC = () => {
             placeholder="키워드 입력"
           />
 >>>>>>> df1267a743fa51ebdd3ad6fd93c37d872f3bca19
+=======
+          <input type="text" id="searchKeyword" name="keyword" placeholder="키워드 입력" />
+>>>>>>> f1a6b7956acec4827dfd267f6cec6b5825ab0b53
           <button type="submit">Search</button>
         </form>
       </section>
