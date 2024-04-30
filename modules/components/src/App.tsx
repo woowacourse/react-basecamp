@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./lib";
+import { Button } from "woowacourse-react-button-component";
 
 function App() {
   const handleClick = () => {
