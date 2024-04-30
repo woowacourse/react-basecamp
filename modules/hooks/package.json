@@ -1,7 +1,7 @@
 {
-  "name": "hooks",
-  "version": "0.0.1",
-  "description": "npm modules",
+  "name": "badahertz52_react_basecamp_hooks",
+  "version": "0.0.2",
+  "description": "우테코 모듈 실습 내용(hooks)",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "badahertz52_react_basecamp_hooks": "^0.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
