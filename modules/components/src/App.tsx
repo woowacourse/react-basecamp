@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Button from './lib/Button';
+import { Button } from '@largopie/button';
 
 function App() {
   const handleClick = () => {
