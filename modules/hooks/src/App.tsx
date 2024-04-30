@@ -1,11 +1,16 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import { useInput } from 'chysis-use-input';
+import './App.css';
 
 function App() {
+  const { value, onChange } = useInput('');
+
   return (
-    <>
-      <h1>Hooks Modules</h1>
-    </>
+    <div>
+      <h1>useInput Example</h1>
+      <input type='text' value={value} onChange={onChange} />
+      <p>Input value: {value}</p>
+    </div>
   );
 }
 
