@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "react-hook-form": "^7.51.3",
     "storybook": "^8.0.8"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12"
   }
 }
