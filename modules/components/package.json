@@ -1,7 +1,7 @@
 {
-  "name": "compoents",
-  "version": "0.0.1",
-  "description": "npm modules",
+  "name": "badahertz52_react_basecamp_compoents",
+  "version": "0.0.2",
+  "description": "우테코 모듈 실습 내용(components)",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -18,6 +18,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "badahertz52_react_basecamp_compoents": "^0.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
