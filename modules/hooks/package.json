@@ -1,6 +1,6 @@
 {
-  "name": "hooks",
-  "version": "0.0.1",
+  "name": "chico_jaeml_useinput",
+  "version": "0.0.2",
   "description": "npm modules",
   "type": "module",
   "types": "dist/index.d.ts",
@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "chico_jaeml_useinput": "^0.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
