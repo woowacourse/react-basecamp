@@ -1,7 +1,7 @@
 {
-  "name": "hooks",
-  "version": "0.0.1",
-  "description": "npm modules",
+  "name": "hash_input_module_hash",
+  "version": "0.0.0",
+  "description": "hash useInput 모듈",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "hash_input_module_hash": "^0.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
