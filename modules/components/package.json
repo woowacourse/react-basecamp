@@ -1,7 +1,7 @@
 {
-  "name": "compoents",
-  "version": "0.0.1",
-  "description": "npm modules",
+  "name": "components-react-package-practice",
+  "version": "0.0.2",
+  "description": "컴포넌트 배포 실습",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -38,6 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "components-react-package-practice": "^0.0.2",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
