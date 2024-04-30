@@ -1,7 +1,7 @@
 {
-  "name": "compoents",
-  "version": "0.0.1",
-  "description": "npm modules",
+  "name": "llqqssttyy-react-button",
+  "version": "0.0.0",
+  "description": "재사용 가능한 React Button 컴포넌트",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
