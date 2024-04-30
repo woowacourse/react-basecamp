@@ -1,11 +1,17 @@
 import React from "react";
+// import { useInput } from "./lib/";
+import { useInput } from "seongjinme-hooks-test";
 import "./App.css";
 
 function App() {
+  const { value, onChange } = useInput("");
+
   return (
-    <>
-      <h1>Hooks Modules</h1>
-    </>
+    <div>
+      <h1>useInput Example</h1>
+      <input type="text" value={value} onChange={onChange} />
+      <p>Input value: {value}</p>
+    </div>
   );
 }
 
