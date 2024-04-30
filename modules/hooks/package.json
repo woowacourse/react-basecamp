@@ -1,7 +1,7 @@
 {
-  "name": "hooks",
+  "name": "suya-hooks-input-test",
   "version": "0.0.1",
-  "description": "npm modules",
+  "description": "모듈 배포 실습",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "suya-hooks-input-test": "^0.0.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
