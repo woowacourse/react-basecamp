@@ -1,6 +1,6 @@
 {
-  "name": "hooks",
-  "version": "0.0.1",
+  "name": "novice0840hook",
+  "version": "0.0.0",
   "description": "npm modules",
   "type": "module",
   "types": "dist/index.d.ts",
