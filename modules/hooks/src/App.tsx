@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from './lib/Button';
+import { Button } from 'roqkftjs-hook';
+
 import './App.css';
 
 function App() {
