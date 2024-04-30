@@ -1,5 +1,5 @@
 import React from 'react';
-import useInput from './lib/useInput';
+import { useInput } from '@largopie/use-input';
 import './App.css';
 
 function App() {
