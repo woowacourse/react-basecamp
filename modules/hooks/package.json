@@ -1,7 +1,7 @@
 {
-  "name": "hooks",
+  "name": "pakxe-hooks",
   "version": "0.0.1",
-  "description": "npm modules",
+  "description": "빡세의 두 번째 라이브러리",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "pakxe-hooks": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
