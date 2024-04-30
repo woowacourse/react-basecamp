@@ -1,7 +1,7 @@
 {
-  "name": "compoents",
-  "version": "0.0.1",
-  "description": "npm modules",
+  "name": "@cookie/nice-button",
+  "version": "0.0.0",
+  "description": "cookie's nice button! hello world",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
