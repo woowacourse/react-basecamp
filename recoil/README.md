@@ -401,7 +401,11 @@ const fetchProducts = async () => {
     return data.products;
   } catch (error) {
     console.error("Failed to fetch products:", error);
+<<<<<<< HEAD
     return error;
+=======
+    return [];
+>>>>>>> 3d77771 (feat: Recoil 실습 미션 추가)
   }
 };
 
