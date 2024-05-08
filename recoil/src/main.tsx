@@ -1,40 +1,28 @@
-<<<<<<< HEAD
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { RecoilRoot } from 'recoil';
-import App from './App.tsx';
-import './index.css';
-=======
-<<<<<<< HEAD
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
->>>>>>> 354e011 ([API & Recoil 실습] 웨디(박세현) 미션 제출합니다. (#132))
+import React, { Suspense } from 'react';
+import CartItemCount from './components/CartItemCount';
+import AddToCartButton from './components/AddToCartButton';
+import RemoveFromCartButton from './components/RemoveFromCartButton';
+import CartTotalPrice from './components/CartTotalPrice';
+import './App.css';
+import ProductList from './components/ProductList';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './components/ErrorFallback';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <App />
-    </RecoilRoot>
-  </React.StrictMode>,
-<<<<<<< HEAD
-);
-=======
-)
-=======
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { RecoilRoot } from 'recoil';
-import App from './App.tsx';
-import './index.css';
+function App() {
+  return (
+    <div>
+      <h1>장바구니</h1>
+      <CartItemCount />
+      <AddToCartButton />
+      <RemoveFromCartButton />
+      <CartTotalPrice />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProductList />
+        </Suspense>
+      </ErrorBoundary>
+    </div>
+  );
+}
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <App />
-    </RecoilRoot>
-  </React.StrictMode>,
-);
->>>>>>> 5891a1e ([API & Recoil 실습] 웨디(박세현) 미션 제출합니다. (#132))
->>>>>>> 354e011 ([API & Recoil 실습] 웨디(박세현) 미션 제출합니다. (#132))
+export default App;
