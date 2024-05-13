@@ -74,18 +74,18 @@ npm install recoil
 ### 2.`src/main.tsx` 파일에서 `RecoilRoot` 컴포넌트로 앱을 감싸줍니다.
 
 ```tsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { RecoilRoot } from "recoil";
-import App from "./App.tsx";
-import "./index.css";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
+import App from './App.tsx';
+import './index.css';
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RecoilRoot>
       <App />
     </RecoilRoot>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 ```
 
@@ -109,10 +109,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 - `src/recoil/atoms.ts` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```ts
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export const cartItemCountState = atom<number>({
-  key: "cartItemCountState",
+  key: 'cartItemCountState',
   default: 0,
 });
 ```
@@ -143,9 +143,9 @@ Atom은 Recoil의 상태를 정의하고 관리하는 데 사용됩니다. Atom�
 - `src/components/CartItemCount.tsx` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```tsx
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { cartItemCountState } from "../recoil/atoms";
+import React from 'react';
+import { useRecoilValue } from 'recoil';
+import { cartItemCountState } from '../recoil/atoms';
 
 function CartItemCount() {
   const count = useRecoilValue(cartItemCountState);
@@ -163,9 +163,9 @@ export default CartItemCount;
 - `src/App.tsx`에서 `CartItemCount` 컴포넌트를 렌더링합니다.
 
 ```tsx
-import React from "react";
-import CartItemCount from "./components/CartItemCount";
-import "./App.css";
+import React from 'react';
+import CartItemCount from './components/CartItemCount';
+import './App.css';
 
 function App() {
   return (
@@ -199,9 +199,9 @@ export default App;
 - `src/components/AddToCartButton.tsx` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```tsx
-import React from "react";
-import { useSetRecoilState } from "recoil";
-import { cartItemCountState } from "../recoil/atoms";
+import React from 'react';
+import { useSetRecoilState } from 'recoil';
+import { cartItemCountState } from '../recoil/atoms';
 
 function AddToCartButton() {
   const setCount = useSetRecoilState(cartItemCountState);
@@ -224,9 +224,9 @@ export default AddToCartButton;
 - `src/components/RemoveFromCartButton.tsx` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```tsx
-import React from "react";
-import { useSetRecoilState } from "recoil";
-import { cartItemCountState } from "../recoil/atoms";
+import React from 'react';
+import { useSetRecoilState } from 'recoil';
+import { cartItemCountState } from '../recoil/atoms';
 
 function RemoveFromCartButton() {
   const setCount = useSetRecoilState(cartItemCountState);
@@ -249,11 +249,11 @@ export default RemoveFromCartButton;
 - `src/App.tsx`에서 `AddToCartButton`과 `RemoveFromCartButton` 컴포넌트를 렌더링합니다.
 
 ```tsx
-import React from "react";
-import CartItemCount from "./components/CartItemCount";
-import AddToCartButton from "./components/AddToCartButton";
-import RemoveFromCartButton from "./components/RemoveFromCartButton";
-import "./App.css";
+import React from 'react';
+import CartItemCount from './components/CartItemCount';
+import AddToCartButton from './components/AddToCartButton';
+import RemoveFromCartButton from './components/RemoveFromCartButton';
+import './App.css';
 
 function App() {
   return (
@@ -289,11 +289,11 @@ export default App;
 - `src/recoil/selectors.ts` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```ts
-import { selector } from "recoil";
-import { cartItemCountState } from "./atoms";
+import { selector } from 'recoil';
+import { cartItemCountState } from './atoms';
 
 export const cartTotalPriceState = selector<number>({
-  key: "cartTotalPriceState",
+  key: 'cartTotalPriceState',
   get: ({ get }) => {
     const count = get(cartItemCountState);
     const itemPrice = 10;
@@ -330,9 +330,9 @@ Selector의 `get` 함수는 파생된 상태 값을 계산하는 역할을 합�
 - `src/components/CartTotalPrice.tsx` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```tsx
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { cartTotalPriceState } from "../recoil/selectors";
+import React from 'react';
+import { useRecoilValue } from 'recoil';
+import { cartTotalPriceState } from '../recoil/selectors';
 
 function CartTotalPrice() {
   const totalPrice = useRecoilValue(cartTotalPriceState);
@@ -351,12 +351,12 @@ export default CartTotalPrice;
 - `src/App.tsx`에서 `CartTotalPrice` 컴포넌트를 렌더링합니다.
 
 ```tsx
-import React from "react";
-import CartItemCount from "./components/CartItemCount";
-import AddToCartButton from "./components/AddToCartButton";
-import RemoveFromCartButton from "./components/RemoveFromCartButton";
-import CartTotalPrice from "./components/CartTotalPrice";
-import "./App.css";
+import React from 'react';
+import CartItemCount from './components/CartItemCount';
+import AddToCartButton from './components/AddToCartButton';
+import RemoveFromCartButton from './components/RemoveFromCartButton';
+import CartTotalPrice from './components/CartTotalPrice';
+import './App.css';
 
 function App() {
   return (
@@ -390,27 +390,23 @@ export default App;
 - `src/recoil/selectors.ts` 파일에 다음 코드를 추가합니다.
 
 ```tsx
-import { selector } from "recoil";
-import { cartItemCountState } from "./atoms";
+import { selector } from 'recoil';
+import { cartItemCountState } from './atoms';
 
 const fetchProducts = async () => {
   try {
-    const response = await fetch("https://dummyjson.com/products");
+    const response = await fetch('https://dummyjson.com/products');
     const data = await response.json();
 
     return data.products;
   } catch (error) {
-    console.error("Failed to fetch products:", error);
-<<<<<<< HEAD
+    console.error('Failed to fetch products:', error);
     return error;
-=======
-    return [];
->>>>>>> 3d77771 (feat: Recoil 실습 미션 추가)
   }
 };
 
 export const productsState = selector({
-  key: "productsState",
+  key: 'productsState',
   get: async () => {
     const products = await fetchProducts();
     return products;
@@ -426,10 +422,10 @@ export const productsState = selector({
 - `src/components/ProductList.tsx` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```tsx
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { productsState } from "../recoil/selectors";
-import styled from "styled-components";
+import React from 'react';
+import { useRecoilValue } from 'recoil';
+import { productsState } from '../recoil/selectors';
+import styled from 'styled-components';
 
 const Table = styled.table`
   width: 100%;
@@ -504,7 +500,7 @@ export default ProductList;
 - `src/App.tsx`에서 `ProductList` 컴포넌트를 `Suspense`로 감싸줍니다.
 
 ```tsx
-import React, { Suspense } from "react";
+import React, { Suspense } from 'react';
 // ... (이전 코드와 동일)
 
 function App() {
@@ -529,7 +525,7 @@ export default App;
 #### 4-1. `src/components/ErrorFallback.tsx` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```tsx
-import React from "react";
+import React from 'react';
 
 interface ErrorFallbackProps {
   error: Error;
@@ -549,9 +545,9 @@ export default ErrorFallback;
 #### 4-2. `ErrorFallback` 함수 컴포넌트를 생성하여 에러 발생 시 보여줄 UI를 정의합니다.
 
 ```tsx
-import React, { Suspense } from "react";
-import { ErrorBoundary } from "react-error-boundary";
-import ErrorFallback from "./components/ErrorFallback";
+import React, { Suspense } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './components/ErrorFallback';
 // ... (이전 코드와 동일)
 
 function App() {
@@ -601,10 +597,10 @@ AtomFamily는 Recoil에서 제공하는 유틸리티 함수 중 하나로, 동�
 - `src/recoil/atoms.ts` 파일에 다음 코드를 추가합니다.
 
 ```tsx
-import { atom, atomFamily } from "recoil";
+import { atom, atomFamily } from 'recoil';
 
 export const itemQuantityState = atomFamily<number, number>({
-  key: "itemQuantityState",
+  key: 'itemQuantityState',
   default: 0,
 });
 ```
@@ -618,9 +614,9 @@ export const itemQuantityState = atomFamily<number, number>({
 - `src/components/CartItem.tsx` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```tsx
-import React from "react";
-import { useRecoilState } from "recoil";
-import { itemQuantityState } from "../recoil/atoms";
+import React from 'react';
+import { useRecoilState } from 'recoil';
+import { itemQuantityState } from '../recoil/atoms';
 
 interface CartItemProps {
   item: {
@@ -665,7 +661,7 @@ export default CartItem;
 
 ```tsx
 // ... (이전 코드와 동일)
-import CartItem from "./CartItem";
+import CartItem from './CartItem';
 
 // ... (이전 코드와 동일)
 
@@ -749,19 +745,19 @@ AtomFamily는 상태 관리를 복잡하게 만들 수 있지만, 적절히 사�
 - `src/recoil/atoms.test.ts` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```tsx
-import { renderHook, act } from "@testing-library/react";
-import { RecoilRoot, useRecoilState } from "recoil";
-import { cartItemCountState } from "./atoms";
+import { renderHook, act } from '@testing-library/react';
+import { RecoilRoot, useRecoilState } from 'recoil';
+import { cartItemCountState } from './atoms';
 
-describe("cartItemCountState", () => {
-  it("초기값은 0", () => {
+describe('cartItemCountState', () => {
+  it('초기값은 0', () => {
     const { result } = renderHook(() => useRecoilState(cartItemCountState), {
       wrapper: RecoilRoot,
     });
     expect(result.current[0]).toBe(0);
   });
 
-  it("값 변경 가능", () => {
+  it('값 변경 가능', () => {
     const { result } = renderHook(() => useRecoilState(cartItemCountState), {
       wrapper: RecoilRoot,
     });
@@ -794,20 +790,20 @@ describe("cartItemCountState", () => {
 - `src/recoil/selectors.test.ts` 파일을 생성하고 다음 코드를 추가합니다.
 
 ```tsx
-import { renderHook, act } from "@testing-library/react";
-import { RecoilRoot, useRecoilValue, useSetRecoilState } from "recoil";
-import { cartItemCountState } from "./atoms";
-import { cartTotalPriceState } from "./selectors";
+import { renderHook, act } from '@testing-library/react';
+import { RecoilRoot, useRecoilValue, useSetRecoilState } from 'recoil';
+import { cartItemCountState } from './atoms';
+import { cartTotalPriceState } from './selectors';
 
-describe("cartTotalPriceState", () => {
-  it("초기 총 가격은 0", () => {
+describe('cartTotalPriceState', () => {
+  it('초기 총 가격은 0', () => {
     const { result } = renderHook(() => useRecoilValue(cartTotalPriceState), {
       wrapper: RecoilRoot,
     });
     expect(result.current).toBe(0);
   });
 
-  it("상품 개수에 따른 총 가격 계산", () => {
+  it('상품 개수에 따른 총 가격 계산', () => {
     const { result } = renderHook(
       () => {
         const totalPrice = useRecoilValue(cartTotalPriceState);
@@ -816,7 +812,7 @@ describe("cartTotalPriceState", () => {
       },
       {
         wrapper: RecoilRoot,
-      }
+      },
     );
 
     act(() => {
@@ -843,28 +839,22 @@ describe("cartTotalPriceState", () => {
 - `src/recoil/atoms.test.ts` 파일에 다음 코드를 추가합니다.
 
 ```tsx
-import { cartItemCountState, itemQuantityState } from "./atoms";
+import { cartItemCountState, itemQuantityState } from './atoms';
 
-describe("itemQuantityState", () => {
-  it("초기 수량은 0", () => {
+describe('itemQuantityState', () => {
+  it('초기 수량은 0', () => {
     const productId = 1;
-    const { result } = renderHook(
-      () => useRecoilState(itemQuantityState(productId)),
-      {
-        wrapper: RecoilRoot,
-      }
-    );
+    const { result } = renderHook(() => useRecoilState(itemQuantityState(productId)), {
+      wrapper: RecoilRoot,
+    });
     expect(result.current[0]).toBe(0);
   });
 
-  it("수량 변경 가능", () => {
+  it('수량 변경 가능', () => {
     const productId = 1;
-    const { result } = renderHook(
-      () => useRecoilState(itemQuantityState(productId)),
-      {
-        wrapper: RecoilRoot,
-      }
-    );
+    const { result } = renderHook(() => useRecoilState(itemQuantityState(productId)), {
+      wrapper: RecoilRoot,
+    });
 
     act(() => {
       result.current[1](2);
