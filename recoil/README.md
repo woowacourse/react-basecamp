@@ -490,8 +490,12 @@ const fetchProducts = async () => {
     return error;
 =======
     console.error("Failed to fetch products:", error);
+<<<<<<< HEAD
     return [];
 >>>>>>> 3d77771 (feat: Recoil 실습 미션 추가)
+=======
+    return error;
+>>>>>>> 61f5b28 (feat: 장바구니 api 실습 추가)
   }
 };
 
