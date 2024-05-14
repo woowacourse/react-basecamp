@@ -1,9 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import CartItemCount from "./components/CartItemCount";
 import AddToCartButton from "./components/AddToCartButton";
 import RemoveFromCartButton from "./components/RemoveFromCartButton";
 import CartTotalPrice from "./components/CartTotalPrice";
 import "./App.css";
+import ProductList from "./components/ProductList";
+import ErrorFallback from "./components/ErrorFallback";
 
 function App() {
   return (
@@ -13,6 +16,11 @@ function App() {
       <AddToCartButton />
       <RemoveFromCartButton />
       <CartTotalPrice />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProductList />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }
