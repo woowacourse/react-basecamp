@@ -1,6 +1,7 @@
 import { useRecoilValue } from 'recoil';
 import { productsState } from '../recoil/selectors';
 import styled from 'styled-components';
+import CartItem from './CartItem';
 
 const Table = styled.table`
   width: 100%;
@@ -56,6 +57,9 @@ function ProductList() {
               <TableCell>{product.title}</TableCell>
               <TableCell>{product.description}</TableCell>
               <TableCell>{product.price}원</TableCell>
+              <TableCell>
+                <CartItem item={product} />
+              </TableCell>
             </TableRow>
           ))}
         </tbody>
