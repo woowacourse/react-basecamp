@@ -1,4 +1,6 @@
 import React from "react";
+import "./App.css";
+
 import { useInput } from "woowacourse-react-hooks";
 
 function App() {
