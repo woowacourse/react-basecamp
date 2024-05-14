@@ -1,7 +1,7 @@
 {
-  "name": "compoents",
+  "name": "chlwlstlf-simple-button",
   "version": "0.0.1",
-  "description": "npm modules",
+  "description": "button component",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -18,6 +18,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "chlwlstlf-simple-button": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
