@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { CartItem, Product } from './types';
-import { addCartItem, fetchCartItems, fetchProducts } from './api';
+import { addCartItem, fetchCartItems, fetchProducts, removeCartItem } from './api';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 
@@ -23,14 +23,28 @@ function App() {
     }
   };
 
+  const handleRemoveItem = async (cartItemId: number) => {
+    try {
+      await removeCartItem(cartItemId);
+      const updateCartItems = await fetchCartItems();
+
+      setCartItems(updateCartItems);
+    } catch (error) {
+      console.error('Failed to remove cart item:', error);
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
 
       try {
-        const data = await fetchProducts();
-        setProducts(data);
+        const productsData = await fetchProducts();
+        const cartItemsData = await fetchCartItems();
+
+        setProducts(productsData);
+        setCartItems(cartItemsData);
       } catch (error) {
         setError(error as Error);
       }
@@ -53,7 +67,7 @@ function App() {
     <div>
       <h1>상품 목록 및 장바구니</h1>
       <ProductList products={products} onAddToCart={handleAddToCart} />
-      <Cart items={cartItems} />
+      <Cart items={cartItems} onRemoveItem={handleRemoveItem} />
     </div>
   );
 }
