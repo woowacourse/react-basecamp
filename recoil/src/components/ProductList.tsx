@@ -1,3 +1,4 @@
+import CartItem from "./CartItem";
 import React from "react";
 import { productsState } from "../recoil/selectors";
 import styled from "styled-components";
@@ -57,6 +58,9 @@ function ProductList() {
               <TableCell>{product.title}</TableCell>
               <TableCell>{product.description}</TableCell>
               <TableCell>{product.price}원</TableCell>
+              <TableCell>
+                <CartItem item={product} />
+              </TableCell>
             </TableRow>
           ))}
         </tbody>

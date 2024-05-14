@@ -29,7 +29,6 @@ export const productsState = selector({
   key: "productsState",
   get: async () => {
     const products = await fetchProducts();
-    alert(1);
     return products;
   },
 });
