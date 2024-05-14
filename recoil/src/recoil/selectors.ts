@@ -1,5 +1,5 @@
 import { selector } from 'recoil';
-import { cartItemCountState } from './atom';
+import { cartItemCountState } from './atoms';
 
 const fetchProducts = async () => {
   try {

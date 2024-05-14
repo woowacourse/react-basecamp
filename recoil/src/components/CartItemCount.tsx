@@ -1,5 +1,5 @@
 import { useRecoilValue } from 'recoil';
-import { cartItemCountState } from '../recoil/atom';
+import { cartItemCountState } from '../recoil/atoms';
 
 function CartItemCount() {
   const count = useRecoilValue(cartItemCountState);

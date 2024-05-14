@@ -1,5 +1,5 @@
 import { useSetRecoilState } from 'recoil';
-import { cartItemCountState } from '../recoil/atom';
+import { cartItemCountState } from '../recoil/atoms';
 
 function AddToCartButton() {
   const setCount = useSetRecoilState(cartItemCountState);
