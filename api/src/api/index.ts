@@ -1,4 +1,5 @@
-import { Product } from "../types";
+import { CartItem, Product } from "../types";
+
 import { generateBasicToken } from "../utils/auth";
 
 const API_URL = "http://api-url.com";
@@ -15,6 +16,22 @@ export async function fetchProducts(): Promise<Product[]> {
 
   if (!response.ok) {
     throw new Error("Failed to fetch products");
+  }
+
+  const data = await response.json();
+  return data.content;
+}
+
+// fetchCartItems 함수는 장바구니 데이터를 가져오는 비동기 함수입니다.
+export async function fetchCartItems(): Promise<CartItem[]> {
+  const token = generateBasicToken(USER_ID, USER_PASSWORD);
+  const response = await fetch(`${API_URL}/cart-items`, {
+    method: "GET",
+    headers: { Authorization: token },
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch cart items");
   }
 
   const data = await response.json();
