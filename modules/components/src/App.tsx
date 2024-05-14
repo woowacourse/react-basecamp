@@ -12,6 +12,7 @@ function App() {
 			<Button label="Click me" onClick={handleClick} />
 		</div>
 	);
+
 }
 
 export default App;
