@@ -12,7 +12,7 @@ export const cartTotalPriceState = selector<number>({
 
 const fetchProducts = async () => {
   try {
-    const response = await fetch("https://dummyjson.com/products");
+    const response = await fetch(import.meta.env.VITE_API_URL);
     const data = await response.json();
 
     return data.products;
