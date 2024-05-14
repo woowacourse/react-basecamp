@@ -19,8 +19,12 @@
   },
   "dependencies": {
     "react": "^18.2.0",
+<<<<<<< HEAD
+    "react-dom": "^18.2.0"
+=======
     "react-dom": "^18.2.0",
     "simobutton": "^0.0.0"
+>>>>>>> b77a9789ef65c5655ee9fc39567d7086ec1e1931
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.3",
