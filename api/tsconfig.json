@@ -20,6 +20,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "../recoil/src/components/CartItemCount.tsx",
+    "../recoil/src/recoil"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
