@@ -1,5 +1,5 @@
 {
-  "name": "hooks",
+  "name": "imxyjl-hooks",
   "version": "0.0.1",
   "description": "npm modules",
   "type": "module",
@@ -17,6 +17,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "imxyjl-compoents": "^0.0.1",
+    "imxyjl-hooks": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
