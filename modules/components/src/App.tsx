@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+import React from "react";
+import "./App.css";
+
+function App() {
+  return (
+    <>
+      <h1>Component Modules</h1>
+    </>
+  );
+=======
 import React from 'react';
 import { Button } from 'darr';
 import './App.css';
@@ -13,6 +24,7 @@ function App() {
 			<Button label="Click me" onClick={handleClick} />
 		</div>
 	);
+>>>>>>> ab2a35c930b5aa341371a697d61ee6315efbabed
 }
 
 export default App;
