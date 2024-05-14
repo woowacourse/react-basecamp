@@ -2,7 +2,12 @@ import "./App.css";
 
 import { CartItem, Product } from "./types";
 import React, { useEffect, useState } from "react";
-import { addCartItem, fetchCartItems, fetchProducts } from "./api";
+import {
+  addCartItem,
+  fetchCartItems,
+  fetchProducts,
+  removeCartItem,
+} from "./api";
 
 import Cart from "./components/Cart";
 import ProductList from "./components/ProductList";
@@ -44,6 +49,16 @@ function App() {
     }
   };
 
+  const handleRemoveItem = async (cartItemId: number) => {
+    try {
+      await removeCartItem(cartItemId);
+      const updatedCartItems = await fetchCartItems();
+      setCartItems(updatedCartItems);
+    } catch (error) {
+      console.error("Failed to remove cart item:", error);
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -56,7 +71,7 @@ function App() {
     <div>
       <h1>상품 목록 및 장바구니</h1>
       <ProductList products={products} onAddToCart={handleAddToCart} />
-      <Cart items={cartItems} />
+      <Cart items={cartItems} onRemoveItem={handleRemoveItem} />
     </div>
   );
 }
