@@ -2,6 +2,7 @@ import React from "react";
 import CartItemCount from "./components/CartItemCount";
 import AddToCartButton from "./components/AddToCartButton";
 import RemoveFromCartButton from "./components/RemoveFromCartButton";
+import CartTotalPrice from "./components/CartTotalPrice";
 import "./App.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <CartItemCount />
       <AddToCartButton />
       <RemoveFromCartButton />
+      <CartTotalPrice />
     </div>
   );
 }
