@@ -2,7 +2,7 @@ import "./App.css";
 
 import { CartItem, Product } from "./types";
 import React, { useEffect, useState } from "react";
-import { fetchCartItems, fetchProducts } from "./api";
+import { addCartItem, fetchCartItems, fetchProducts } from "./api";
 
 import Cart from "./components/Cart";
 import ProductList from "./components/ProductList";
@@ -33,6 +33,17 @@ function App() {
     fetchData();
   }, []);
 
+  const handleAddToCart = async (productId: number) => {
+    try {
+      await addCartItem(productId);
+      const updatedCartItems = await fetchCartItems();
+      setCartItems(updatedCartItems);
+    } catch (error) {
+      console.error("Failed to add item to cart:", error);
+      alert("장바구니에 상품을 추가하는데 실패했습니다.");
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -44,7 +55,7 @@ function App() {
   return (
     <div>
       <h1>상품 목록 및 장바구니</h1>
-      <ProductList products={products} />
+      <ProductList products={products} onAddToCart={handleAddToCart} />
       <Cart items={cartItems} />
     </div>
   );
