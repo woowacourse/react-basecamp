@@ -2,6 +2,7 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import { productsState } from "../recoil/selectors";
 import styled from "styled-components";
+import CartItem from "./CartItem";
 
 const Table = styled.table`
   width: 100%;
@@ -48,15 +49,18 @@ function ProductList() {
             <TableHeader>상품명</TableHeader>
             <TableHeader>설명</TableHeader>
             <TableHeader>가격</TableHeader>
+            <TableHeader>수량</TableHeader>
           </tr>
         </thead>
-
         <tbody>
           {products.map((product: Product) => (
             <TableRow key={product.id}>
               <TableCell>{product.title}</TableCell>
               <TableCell>{product.description}</TableCell>
               <TableCell>{product.price}원</TableCell>
+              <TableCell>
+                <CartItem item={product} />
+              </TableCell>
             </TableRow>
           ))}
         </tbody>
