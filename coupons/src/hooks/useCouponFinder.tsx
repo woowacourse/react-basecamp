@@ -1,12 +1,26 @@
-import { useRecoilValue } from 'recoil';
-import { couponListSelector } from '../recoil/selector';
+import { selectorFamily, useRecoilValue } from 'recoil';
+import { Coupon } from '../types/coupon';
+import { couponValidityState, couponsState } from '../recoil/atom';
 
-export const useCouponFinder = () => {
-  const coupons = useRecoilValue(couponListSelector);
+export const useCouponFinder = (code: string) => {
+  const coupon = useRecoilValue(couponByCodeSelector(code));
 
-  const findCouponByCode = (code: string) => {
-    return coupons.find((coupon) => coupon.code === code);
-  };
+  return coupon;
+};
 
-  return { findCouponByCode };
+export const couponByCodeSelector = selectorFamily<Coupon | undefined, string>({
+  key: 'couponByCodeSelector',
+  get:
+    (code) =>
+    ({ get }) => {
+      const coupons = get(couponsState);
+
+      return coupons.find((coupon) => coupon.code == code);
+    },
+});
+
+export const useCouponValidator = (couponId: number) => {
+  const isValid = useRecoilValue(couponValidityState(couponId));
+
+  return isValid;
 };
