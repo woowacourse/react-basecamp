@@ -1,5 +1,6 @@
 import { Coupon } from "../types/coupon";
 
+// 훅 아님(use 붙이지 않는 게 맞음)
 export const useCouponValidator = () => {
   const isCouponExpired = (expirationDate: string) => {
     const today = new Date();
