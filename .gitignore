@@ -27,4 +27,3 @@ dist-ssr
 *.sw?
 
 *storybook.log
-api/.env
