@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 import { Coupon } from '../types/coupon';
 
-export const couponState = atom<Coupon[]>({
-  key: 'couponState',
+export const couponsState = atom<Coupon[]>({
+  key: 'couponsState',
   default: [],
 });

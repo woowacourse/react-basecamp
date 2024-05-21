@@ -1,10 +1,10 @@
 import { selector } from 'recoil';
-import { couponState } from './atom';
+import { couponsState } from './atom';
 
 export const couponListSelector = selector({
   key: 'couponListSelector',
   get: ({ get }) => {
-    const coupons = get(couponState);
+    const coupons = get(couponsState);
 
     return coupons;
   },
