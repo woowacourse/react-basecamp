@@ -1,0 +1,12 @@
+{
+  "name": "react-basecamp",
+  "version": "1.0.0",
+  "description": "이 저장소는 리액트의 기본 개념들을 학습하기 위한 저장소입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
