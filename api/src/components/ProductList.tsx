@@ -2,9 +2,10 @@ import { Product } from "../type";
 
 interface ProductListProps {
   products: Product[];
+  onAddToCart: (productId: number) => void;
 }
 
-function ProductList({ products }: ProductListProps) {
+function ProductList({ onAddToCart, products }: ProductListProps) {
   return (
     <div>
       <h2>상품 목록</h2>
@@ -13,6 +14,9 @@ function ProductList({ products }: ProductListProps) {
           <li key={product.id}>
             <img src={product.imageUrl} alt={product.name} width={100} />
             {product.name} - {product.price}원
+            <button onClick={() => onAddToCart(product.id)}>
+              장바구니에 추가
+            </button>
           </li>
         ))}
       </ul>
