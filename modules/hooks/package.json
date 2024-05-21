@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "chysis-use-input",
   "version": "0.0.0",
   "description": "description",
+=======
+  "name": "vwh-test-hooks",
+  "version": "0.0.1",
+  "description": "npm modules",
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -17,9 +23,15 @@
     "test": "jest"
   },
   "dependencies": {
+<<<<<<< HEAD
     "chysis-use-input": "^0.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+=======
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vwh-test-hooks": "^0.0.1"
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",

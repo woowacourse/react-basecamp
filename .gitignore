@@ -26,4 +26,12 @@ dist-ssr
 *.sln
 *.sw?
 
+<<<<<<< HEAD
 .env
+=======
+<<<<<<< HEAD
+*storybook.log
+=======
+.env
+>>>>>>> df1267a743fa51ebdd3ad6fd93c37d872f3bca19
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f

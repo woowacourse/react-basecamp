@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { renderHook } from "@testing-library/react";
 import { RecoilRoot } from "recoil";
 import { useCouponApplicabilityChecker } from "./useCouponApplicabilityChecker";
@@ -6,6 +7,16 @@ import { mockCoupons } from "../mocks/coupons";
 
 describe("useCouponApplicabilityChecker", () => {
   it("주문 금액이 최소 주문 금액 미만이면 쿠폰 적용 불가", () => {
+=======
+import { renderHook } from '@testing-library/react';
+import { RecoilRoot } from 'recoil';
+import { useCouponApplicabilityChecker } from './useCouponApplicabilityChecker';
+import { couponsState } from '../recoil/atoms';
+import { mockCoupons } from '../mocks/coupons';
+
+describe('useCouponApplicabilityChecker', () => {
+  it('주문 금액이 최소 주문 금액 미만이면 쿠폰 적용 불가', () => {
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
     const { result } = renderHook(() => useCouponApplicabilityChecker(), {
       wrapper: ({ children }) => (
         <RecoilRoot initializeState={({ set }) => set(couponsState, mockCoupons)}>{children}</RecoilRoot>
@@ -14,7 +25,11 @@ describe("useCouponApplicabilityChecker", () => {
     expect(result.current.isCouponApplicable(mockCoupons[0], 50000)).toBe(false);
   });
 
+<<<<<<< HEAD
   it("주문 금액이 최소 주문 금액 이상이면 쿠폰 적용 가능", () => {
+=======
+  it('주문 금액이 최소 주문 금액 이상이면 쿠폰 적용 가능', () => {
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
     const { result } = renderHook(() => useCouponApplicabilityChecker(), {
       wrapper: ({ children }) => (
         <RecoilRoot initializeState={({ set }) => set(couponsState, mockCoupons)}>{children}</RecoilRoot>
@@ -24,9 +39,15 @@ describe("useCouponApplicabilityChecker", () => {
   });
 });
 
+<<<<<<< HEAD
 describe("쿠폰 사용 가능 시간 확인", () => {
   it("사용 가능 시간 외에는 쿠폰 적용 불가", () => {
     const testTime = new Date("2023-05-01T08:00:00");
+=======
+describe('쿠폰 사용 가능 시간 확인', () => {
+  it('사용 가능 시간 외에는 쿠폰 적용 불가', () => {
+    const testTime = new Date('2023-05-01T08:00:00');
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
 
     const { result } = renderHook(() => useCouponApplicabilityChecker(), {
       wrapper: ({ children }) => (
@@ -36,8 +57,13 @@ describe("쿠폰 사용 가능 시간 확인", () => {
     expect(result.current.isCouponApplicable(mockCoupons[3], 100000, testTime)).toBe(false);
   });
 
+<<<<<<< HEAD
   it("사용 가능 시간 내에는 쿠폰 적용 가능", () => {
     const testTime = new Date("2023-05-01T07:00:00");
+=======
+  it('사용 가능 시간 내에는 쿠폰 적용 가능', () => {
+    const testTime = new Date('2023-05-01T07:00:00');
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
     const { result } = renderHook(() => useCouponApplicabilityChecker(), {
       wrapper: ({ children }) => (
         <RecoilRoot initializeState={({ set }) => set(couponsState, mockCoupons)}>{children}</RecoilRoot>

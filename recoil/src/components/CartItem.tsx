@@ -10,7 +10,11 @@ interface CartItemProps {
   };
 }
 
+<<<<<<< HEAD
 const CartItem = ({ item }: CartItemProps) => {
+=======
+function CartItem({ item }: CartItemProps) {
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
   const [quantity, setQuantity] = useRecoilState(itemQuantityState(item.id));
 
   const handleIncrement = () => {
@@ -29,6 +33,10 @@ const CartItem = ({ item }: CartItemProps) => {
       <button onClick={handleDecrement}>-</button>
     </div>
   );
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
 
 export default CartItem;

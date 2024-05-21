@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "@chysis/alert-button",
   "version": "0.0.0",
   "description": "description",
+=======
+  "name": "vwh-test-button",
+  "version": "0.0.2",
+  "description": "Button component",
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -18,9 +24,15 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@chysis/alert-button": "^0.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+=======
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vwh-test-button": "^0.0.2"
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.3",

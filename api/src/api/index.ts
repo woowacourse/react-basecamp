@@ -1,6 +1,7 @@
 import { CartItem, Product } from '../types';
 import { generateBasicToken } from '../utils/auth';
 
+<<<<<<< HEAD
 const API_URL = 'http://54.180.95.212:8080';
 const USER_ID = import.meta.env.USER_ID;
 const USER_PASSWORD = import.meta.env.USER_PASSWORD;
@@ -8,6 +9,11 @@ const USER_PASSWORD = import.meta.env.USER_PASSWORD;
 export async function fetchProducts(): Promise<Product[]> {
   const token = generateBasicToken(USER_ID, USER_PASSWORD);
   const response = await fetch(`${API_URL}/products`, {
+=======
+export async function fetchProducts(): Promise<Product[]> {
+  const token = generateBasicToken(import.meta.env.VITE_USER_ID, import.meta.env.VITE_PASSWORD);
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/products`, {
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
     method: 'GET',
     headers: { Authorization: token },
   });
@@ -21,8 +27,13 @@ export async function fetchProducts(): Promise<Product[]> {
 }
 
 export async function fetchCartItems(): Promise<CartItem[]> {
+<<<<<<< HEAD
   const token = generateBasicToken(USER_ID, USER_PASSWORD);
   const response = await fetch(`${API_URL}/cart-items`, {
+=======
+  const token = generateBasicToken(import.meta.env.VITE_USER_ID, import.meta.env.VITE_PASSWORD);
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/cart-items`, {
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
     method: 'GET',
     headers: { Authorization: token },
   });
@@ -36,8 +47,13 @@ export async function fetchCartItems(): Promise<CartItem[]> {
 }
 
 export async function addCartItem(productId: number): Promise<void> {
+<<<<<<< HEAD
   const token = generateBasicToken(USER_ID, USER_PASSWORD);
   const response = await fetch(`${API_URL}/cart-items`, {
+=======
+  const token = generateBasicToken(import.meta.env.VITE_USER_ID, import.meta.env.VITE_PASSWORD);
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/cart-items`, {
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -52,8 +68,13 @@ export async function addCartItem(productId: number): Promise<void> {
 }
 
 export async function removeCartItem(cartItemId: number): Promise<void> {
+<<<<<<< HEAD
   const token = generateBasicToken(USER_ID, USER_PASSWORD);
   const response = await fetch(`${API_URL}/cart-items/${cartItemId}`, {
+=======
+  const token = generateBasicToken(import.meta.env.VITE_USER_ID, import.meta.env.VITE_PASSWORD);
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/cart-items/${cartItemId}`, {
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
     method: 'DELETE',
     headers: {
       Authorization: token,

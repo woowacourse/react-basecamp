@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { useCouponFinder } from "./useCouponFinder";
 import { useCouponValidator } from "./useCouponValidator";
 import { Coupon } from "../types/coupon";
+=======
+import { useCouponFinder } from './useCouponFinder';
+import { useCouponValidator } from './useCouponValidator';
+import { Coupon } from '../types/coupon';
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
 
 export const useCouponApplicabilityChecker = () => {
   const { findCouponByCode } = useCouponFinder();
@@ -15,9 +21,15 @@ export const useCouponApplicabilityChecker = () => {
     }
 
     if (targetCoupon.availableTime) {
+<<<<<<< HEAD
       const [startHour, startMinute, startSecond] = targetCoupon.availableTime.start.split(":").map(Number);
 
       const [endHour, endMinute, endSecond] = targetCoupon.availableTime.end.split(":").map(Number);
+=======
+      const [startHour, startMinute, startSecond] = targetCoupon.availableTime.start.split(':').map(Number);
+
+      const [endHour, endMinute, endSecond] = targetCoupon.availableTime.end.split(':').map(Number);
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
 
       const startTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), startHour, startMinute, startSecond);
 

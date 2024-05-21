@@ -12,4 +12,8 @@ export interface Coupon {
     end: string;
   };
   expirationDate: string;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f

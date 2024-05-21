@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { useRecoilValue } from "recoil";
 import { cartState, couponsState } from "../recoil/atoms";
 import { useDiscountCalculator } from "./useDiscountCalculator";
+=======
+import { useRecoilValue } from 'recoil';
+import { cartState, couponsState } from '../recoil/atoms';
+import { useDiscountCalculator } from './useDiscountCalculator';
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
 
 export const useCartCalculator = () => {
   const cartItems = useRecoilValue(cartState);

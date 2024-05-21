@@ -32,7 +32,11 @@ type Product = {
   price: number;
 };
 
+<<<<<<< HEAD
 const ProductList = () => {
+=======
+function ProductList() {
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
   const products = useRecoilValue(productsState);
 
   if (products.length === 0) {
@@ -48,11 +52,19 @@ const ProductList = () => {
             <TableHeader>상품명</TableHeader>
             <TableHeader>설명</TableHeader>
             <TableHeader>가격</TableHeader>
+<<<<<<< HEAD
           </tr>
         </thead>
 
         <tbody>
           {products.map((product: Product) => {
+=======
+            <TableHeader>수량</TableHeader>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product: Product) => (
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
             <TableRow key={product.id}>
               <TableCell>{product.title}</TableCell>
               <TableCell>{product.description}</TableCell>
@@ -60,12 +72,21 @@ const ProductList = () => {
               <TableCell>
                 <CartItem item={product} />
               </TableCell>
+<<<<<<< HEAD
             </TableRow>;
           })}
+=======
+            </TableRow>
+          ))}
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
         </tbody>
       </Table>
     </div>
   );
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> bb7b51d9b22bbb08fa7c3785cfe93ab21e05c80f
 
 export default ProductList;
