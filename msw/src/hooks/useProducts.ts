@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { PRODUCTS_ENDPOINT } from '../api/endpoint';
+import { fetchProducts } from '../api/products';
 
 interface Product {
   id: number;
@@ -24,11 +24,9 @@ export default function useProducts(): UseProductsResult {
   const [error, setError] = useState<unknown>(null);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const getProducts = async () => {
       try {
-        const limit = page === 1 ? 20 : 4;
-        const response = await fetch(`${PRODUCTS_ENDPOINT}?page=${page}&limit=${limit}`);
-        const data = await response.json();
+        const data = await fetchProducts(page, 4);
 
         setProducts((prevProducts) => [...prevProducts, ...data]);
       } catch (error) {
@@ -38,7 +36,7 @@ export default function useProducts(): UseProductsResult {
       }
     };
 
-    fetchProducts();
+    getProducts();
   }, [page]);
 
   const fetchNextPage = () => {
