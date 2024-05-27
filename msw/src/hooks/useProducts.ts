@@ -12,22 +12,30 @@ interface Product {
 interface UseProductsResult {
   products: Product[];
   loading: boolean;
+  error: unknown;
 }
 
 export default function useProducts(): UseProductsResult {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<unknown>(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch(PRODUCTS_ENDPOINT);
-      const data = await response.json();
-      setProducts(data);
-      setLoading(false);
+      try {
+        const response = await fetch(PRODUCTS_ENDPOINT);
+        const data = await response.json();
+
+        setProducts(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchProducts();
   }, []);
 
-  return { products, loading };
+  return { products, loading, error };
 }

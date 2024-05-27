@@ -1,5 +1,8 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import useProducts from './useProducts';
+import { server } from '../mocks/server';
+import { HttpResponse, http } from 'msw';
+import { PRODUCTS_ENDPOINT } from '../api/endpoint';
 
 describe('useProducts', () => {
   describe('상품 목록 조회', () => {
@@ -15,6 +18,22 @@ describe('useProducts', () => {
       const { result } = renderHook(() => useProducts());
 
       expect(result.current.loading).toBe(true);
+    });
+  });
+
+  it('상품 목록 조회 중 에러 상태', async () => {
+    server.use(
+      http.get(PRODUCTS_ENDPOINT, () => {
+        return new HttpResponse(null, { status: 500 });
+      }),
+    );
+
+    const { result } = renderHook(() => useProducts());
+
+    await waitFor(() => {
+      expect(result.current.products).toEqual([]);
+      expect(result.current.loading).toEqual(false);
+      expect(result.current.error).toBeTruthy();
     });
   });
 });
