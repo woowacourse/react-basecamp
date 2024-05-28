@@ -11,22 +11,29 @@ interface Product {
 interface UseProductsResult {
   products: Product[];
   loading: boolean;
+  error: boolean;
 }
 const useProducts = (): UseProductsResult => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch(PRODUCTS_ENDPOINT);
-      const data = await response.json();
-      setProducts(data);
-      setLoading(false);
+      try {
+        const response = await fetch(PRODUCTS_ENDPOINT);
+        const data = await response.json();
+        setProducts(data);
+      } catch {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchProducts();
   }, []);
 
-  return { products, loading };
+  return { products, loading, error };
 };
 
 export default useProducts;
