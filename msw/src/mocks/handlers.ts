@@ -8,7 +8,7 @@ export const handlers = [
 
     const page = Number(url.searchParams.get('page') || '1');
     const limit = page === 1 ? 20 : 4;
-    const start = page === 1 ? 0 : (page - 1) * 4 + 20;
+    const start = page === 1 ? 0 : (page - 2) * 4 + 20;
     const end = start + limit;
 
     const paginatedProducts = products.slice(start, end);
