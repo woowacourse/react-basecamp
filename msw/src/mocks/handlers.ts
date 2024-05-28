@@ -1,7 +1,10 @@
 import { http, HttpResponse } from "msw";
+import products from "./products.json";
+
+const API_URL = "http://woteco.com/products";
 
 export const handlers = [
-  http.get("http://example.com", () => {
-    return HttpResponse.json();
+  http.get(API_URL, () => {
+    return HttpResponse.json(products);
   }),
 ];
