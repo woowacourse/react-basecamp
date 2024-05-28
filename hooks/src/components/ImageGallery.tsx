@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
-
 interface Image {
   id: number;
   webformatURL: string;
@@ -9,7 +7,7 @@ interface Image {
 }
 
 const ImageGallery: React.FC = () => {
-  const [images, setImages] = useState<Image[]>([]);
+  const [images] = useState<Image[]>([]);
   const [keyword, setKeyword] = useState("");
 
   // useEffect를 사용하여 keyword가 변경될 때마다 이미지를 가져오는 로직을 작성해보세요.
