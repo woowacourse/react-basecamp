@@ -1,0 +1,142 @@
+[
+  {
+    "id": 0,
+    "name": "스마트폰",
+    "price": 699,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=스마트폰",
+    "category": "Electronics"
+  },
+  {
+    "id": 1,
+    "name": "노트북",
+    "price": 999,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=노트북",
+    "category": "Electronics"
+  },
+  {
+    "id": 2,
+    "name": "헤드폰",
+    "price": 199,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=헤드폰",
+    "category": "Electronics"
+  },
+  {
+    "id": 3,
+    "name": "스마트워치",
+    "price": 299,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=스마트워치",
+    "category": "Electronics"
+  },
+  {
+    "id": 4,
+    "name": "태블릿",
+    "price": 399,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=태블릿",
+    "category": "Electronics"
+  },
+  {
+    "id": 5,
+    "name": "카메라",
+    "price": 599,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=카메라",
+    "category": "Electronics"
+  },
+  {
+    "id": 6,
+    "name": "게임콘솔",
+    "price": 499,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=게임콘솔",
+    "category": "Electronics"
+  },
+  {
+    "id": 7,
+    "name": "블루투스스피커",
+    "price": 99,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=블루투스스피커",
+    "category": "Electronics"
+  },
+  {
+    "id": 8,
+    "name": "모니터",
+    "price": 199,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=모니터",
+    "category": "Electronics"
+  },
+  {
+    "id": 9,
+    "name": "외장하드",
+    "price": 89,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=외장하드",
+    "category": "Electronics"
+  },
+  {
+    "id": 10,
+    "name": "전자책리더기",
+    "price": 129,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=전자책리더기",
+    "category": "Electronics"
+  },
+  {
+    "id": 11,
+    "name": "휴대용충전기",
+    "price": 49,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=휴대용충전기",
+    "category": "Electronics"
+  },
+  {
+    "id": 12,
+    "name": "무선마우스",
+    "price": 29,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=무선마우스",
+    "category": "Electronics"
+  },
+  {
+    "id": 13,
+    "name": "무선키보드",
+    "price": 59,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=무선키보드",
+    "category": "Electronics"
+  },
+  {
+    "id": 14,
+    "name": "웹캠",
+    "price": 79,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=웹캠",
+    "category": "Electronics"
+  },
+  {
+    "id": 15,
+    "name": "VR헤드셋",
+    "price": 399,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=VR헤드셋",
+    "category": "Electronics"
+  },
+  {
+    "id": 16,
+    "name": "스마트전구",
+    "price": 19,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=스마트전구",
+    "category": "Electronics"
+  },
+  {
+    "id": 17,
+    "name": "드론",
+    "price": 799,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=드론",
+    "category": "Electronics"
+  },
+  {
+    "id": 18,
+    "name": "액션카메라",
+    "price": 249,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=액션카메라",
+    "category": "Electronics"
+  },
+  {
+    "id": 19,
+    "name": "피트니스트래커",
+    "price": 149,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=피트니스트래커",
+    "category": "Electronics"
+  }
+]
