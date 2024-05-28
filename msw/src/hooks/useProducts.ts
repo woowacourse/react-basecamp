@@ -29,6 +29,7 @@ export default function useProducts(): UseProductsResult {
       if (page >= 21) setIsLast(true);
       if (isLast) return;
       try {
+        setLoading(true);
         const data = await fetchProducts(page, 4);
 
         setProducts((prevProducts) => [...prevProducts, ...data]);
