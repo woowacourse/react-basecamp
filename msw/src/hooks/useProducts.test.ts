@@ -88,5 +88,23 @@ describe('useProducts', () => {
         expect(result.current.page).toBe(21);
       });
     });
+
+    it('페이지네이션으로 추가 데이터를 불러올 때 로딩 상태를 표시한다.', async () => {
+      const { result } = renderHook(() => useProducts());
+
+      await waitFor(() => {
+        expect(result.current.loading).toBeFalsy();
+      });
+
+      act(() => {
+        result.current.fetchNextPage();
+      });
+
+      expect(result.current.loading).toBeTruthy();
+
+      await waitFor(() => {
+        expect(result.current.loading).toBeFalsy();
+      });
+    });
   });
 });
