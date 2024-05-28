@@ -25,7 +25,7 @@
 
     "esModuleInterop": true
   },
-  "include": ["src/lib", "src/stories/Button.stories.ts"],
+  "include": ["src/lib"],
   "exclude": ["node_modules", "dist", "**/*.test.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -35,31 +35,6 @@ export async function fetchCartItems(): Promise<CartItem[]> {
   return data.content;
 }
 
-const fetchWithErrorHandling = async (endpoint: string, body: RequestInit) => {
-  try {
-    const response = await fetch(`${API_URL}/${endpoint}`, body);
-    if (!response.ok) {
-      throw new Error(`Failed to ${endpoint}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error(`Failed to fetch ${endpoint}:`, error);
-    return error;
-  }
-};
-
-export const addCartItem2 = (productId: number) => {
-  const token = generateBasicToken(USER_ID, USER_PASSWORD);
-  return fetchWithErrorHandling("cart-items", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: token,
-    },
-    body: JSON.stringify({ productId }),
-  });
-};
-
 export async function addCartItem(productId: number): Promise<void> {
   const token = generateBasicToken(USER_ID, USER_PASSWORD);
   const response = await fetch(`${API_URL}/cart-items`, {
