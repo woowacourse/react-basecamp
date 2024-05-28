@@ -1,0 +1,702 @@
+[
+  {
+    "id": 0,
+    "name": "스마트폰",
+    "price": 699,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=스마트폰",
+    "category": "Electronics"
+  },
+  {
+    "id": 1,
+    "name": "노트북",
+    "price": 999,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=노트북",
+    "category": "Electronics"
+  },
+  {
+    "id": 2,
+    "name": "헤드폰",
+    "price": 199,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=헤드폰",
+    "category": "Electronics"
+  },
+  {
+    "id": 3,
+    "name": "스마트워치",
+    "price": 299,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=스마트워치",
+    "category": "Electronics"
+  },
+  {
+    "id": 4,
+    "name": "태블릿",
+    "price": 399,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=태블릿",
+    "category": "Electronics"
+  },
+  {
+    "id": 5,
+    "name": "카메라",
+    "price": 599,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=카메라",
+    "category": "Electronics"
+  },
+  {
+    "id": 6,
+    "name": "게임콘솔",
+    "price": 499,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=게임콘솔",
+    "category": "Electronics"
+  },
+  {
+    "id": 7,
+    "name": "블루투스스피커",
+    "price": 99,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=블루투스스피커",
+    "category": "Electronics"
+  },
+  {
+    "id": 8,
+    "name": "모니터",
+    "price": 199,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=모니터",
+    "category": "Electronics"
+  },
+  {
+    "id": 9,
+    "name": "외장하드",
+    "price": 89,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=외장하드",
+    "category": "Electronics"
+  },
+  {
+    "id": 10,
+    "name": "전자책리더기",
+    "price": 129,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=전자책리더기",
+    "category": "Electronics"
+  },
+  {
+    "id": 11,
+    "name": "휴대용충전기",
+    "price": 49,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=휴대용충전기",
+    "category": "Electronics"
+  },
+  {
+    "id": 12,
+    "name": "무선마우스",
+    "price": 29,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=무선마우스",
+    "category": "Electronics"
+  },
+  {
+    "id": 13,
+    "name": "무선키보드",
+    "price": 59,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=무선키보드",
+    "category": "Electronics"
+  },
+  {
+    "id": 14,
+    "name": "웹캠",
+    "price": 79,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=웹캠",
+    "category": "Electronics"
+  },
+  {
+    "id": 15,
+    "name": "VR헤드셋",
+    "price": 399,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=VR헤드셋",
+    "category": "Electronics"
+  },
+  {
+    "id": 16,
+    "name": "스마트전구",
+    "price": 19,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=스마트전구",
+    "category": "Electronics"
+  },
+  {
+    "id": 17,
+    "name": "드론",
+    "price": 799,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=드론",
+    "category": "Electronics"
+  },
+  {
+    "id": 18,
+    "name": "액션카메라",
+    "price": 249,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=액션카메라",
+    "category": "Electronics"
+  },
+  {
+    "id": 19,
+    "name": "피트니스트래커",
+    "price": 149,
+    "imageUrl": "https://via.placeholder.com/150/0000FF/808080?text=피트니스트래커",
+    "category": "Electronics"
+  },
+  {
+    "id": 20,
+    "name": "소설책",
+    "price": 19,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=소설책",
+    "category": "Books"
+  },
+  {
+    "id": 21,
+    "name": "과학소설",
+    "price": 22,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=과학소설",
+    "category": "Books"
+  },
+  {
+    "id": 22,
+    "name": "판타지소설",
+    "price": 18,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=판타지소설",
+    "category": "Books"
+  },
+  {
+    "id": 23,
+    "name": "자서전",
+    "price": 25,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=자서전",
+    "category": "Books"
+  },
+  {
+    "id": 24,
+    "name": "추리소설",
+    "price": 20,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=추리소설",
+    "category": "Books"
+  },
+  {
+    "id": 25,
+    "name": "로맨스소설",
+    "price": 17,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=로맨스소설",
+    "category": "Books"
+  },
+  {
+    "id": 26,
+    "name": "스릴러소설",
+    "price": 21,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=스릴러소설",
+    "category": "Books"
+  },
+  {
+    "id": 27,
+    "name": "자기계발서",
+    "price": 23,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=자기계발서",
+    "category": "Books"
+  },
+  {
+    "id": 28,
+    "name": "요리책",
+    "price": 30,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=요리책",
+    "category": "Books"
+  },
+  {
+    "id": 29,
+    "name": "그래픽노블",
+    "price": 27,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=그래픽노블",
+    "category": "Books"
+  },
+  {
+    "id": 30,
+    "name": "역사책",
+    "price": 24,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=역사책",
+    "category": "Books"
+  },
+  {
+    "id": 31,
+    "name": "동화책",
+    "price": 15,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=동화책",
+    "category": "Books"
+  },
+  {
+    "id": 32,
+    "name": "시집",
+    "price": 12,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=시집",
+    "category": "Books"
+  },
+  {
+    "id": 33,
+    "name": "에세이",
+    "price": 16,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=에세이",
+    "category": "Books"
+  },
+  {
+    "id": 34,
+    "name": "철학책",
+    "price": 22,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=철학책",
+    "category": "Books"
+  },
+  {
+    "id": 35,
+    "name": "과학책",
+    "price": 20,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=과학책",
+    "category": "Books"
+  },
+  {
+    "id": 36,
+    "name": "경제서적",
+    "price": 28,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=경제서적",
+    "category": "Books"
+  },
+  {
+    "id": 37,
+    "name": "여행책",
+    "price": 26,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=여행책",
+    "category": "Books"
+  },
+  {
+    "id": 38,
+    "name": "음악책",
+    "price": 29,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=음악책",
+    "category": "Books"
+  },
+  {
+    "id": 39,
+    "name": "미술책",
+    "price": 31,
+    "imageUrl": "https://via.placeholder.com/150/FF0000/808080?text=미술책",
+    "category": "Books"
+  },
+  {
+    "id": 40,
+    "name": "셔츠",
+    "price": 35,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=셔츠",
+    "category": "Clothing"
+  },
+  {
+    "id": 41,
+    "name": "청바지",
+    "price": 45,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=청바지",
+    "category": "Clothing"
+  },
+  {
+    "id": 42,
+    "name": "재킷",
+    "price": 60,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=재킷",
+    "category": "Clothing"
+  },
+  {
+    "id": 43,
+    "name": "드레스",
+    "price": 80,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=드레스",
+    "category": "Clothing"
+  },
+  {
+    "id": 44,
+    "name": "스웨터",
+    "price": 50,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=스웨터",
+    "category": "Clothing"
+  },
+  {
+    "id": 45,
+    "name": "코트",
+    "price": 100,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=코트",
+    "category": "Clothing"
+  },
+  {
+    "id": 46,
+    "name": "블라우스",
+    "price": 40,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=블라우스",
+    "category": "Clothing"
+  },
+  {
+    "id": 47,
+    "name": "반바지",
+    "price": 30,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=반바지",
+    "category": "Clothing"
+  },
+  {
+    "id": 48,
+    "name": "스커트",
+    "price": 35,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=스커트",
+    "category": "Clothing"
+  },
+  {
+    "id": 49,
+    "name": "양말",
+    "price": 10,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=양말",
+    "category": "Clothing"
+  },
+  {
+    "id": 50,
+    "name": "신발",
+    "price": 70,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=신발",
+    "category": "Clothing"
+  },
+  {
+    "id": 51,
+    "name": "모자",
+    "price": 25,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=모자",
+    "category": "Clothing"
+  },
+  {
+    "id": 52,
+    "name": "벨트",
+    "price": 20,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=벨트",
+    "category": "Clothing"
+  },
+  {
+    "id": 53,
+    "name": "운동복",
+    "price": 55,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=운동복",
+    "category": "Clothing"
+  },
+  {
+    "id": 54,
+    "name": "잠옷",
+    "price": 30,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=잠옷",
+    "category": "Clothing"
+  },
+  {
+    "id": 55,
+    "name": "수영복",
+    "price": 40,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=수영복",
+    "category": "Clothing"
+  },
+  {
+    "id": 56,
+    "name": "넥타이",
+    "price": 15,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=넥타이",
+    "category": "Clothing"
+  },
+  {
+    "id": 57,
+    "name": "장갑",
+    "price": 20,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=장갑",
+    "category": "Clothing"
+  },
+  {
+    "id": 58,
+    "name": "안경",
+    "price": 80,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=안경",
+    "category": "Clothing"
+  },
+  {
+    "id": 59,
+    "name": "가방",
+    "price": 90,
+    "imageUrl": "https://via.placeholder.com/150/00FF00/808080?text=가방",
+    "category": "Clothing"
+  },
+  {
+    "id": 60,
+    "name": "믹서기",
+    "price": 60,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=믹서기",
+    "category": "Kitchen"
+  },
+  {
+    "id": 61,
+    "name": "토스터기",
+    "price": 40,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=토스터기",
+    "category": "Kitchen"
+  },
+  {
+    "id": 62,
+    "name": "전자레인지",
+    "price": 120,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=전자레인지",
+    "category": "Kitchen"
+  },
+  {
+    "id": 63,
+    "name": "커피메이커",
+    "price": 80,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=커피메이커",
+    "category": "Kitchen"
+  },
+  {
+    "id": 64,
+    "name": "에어프라이어",
+    "price": 100,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=에어프라이어",
+    "category": "Kitchen"
+  },
+  {
+    "id": 65,
+    "name": "냉장고",
+    "price": 500,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=냉장고",
+    "category": "Kitchen"
+  },
+  {
+    "id": 66,
+    "name": "믹서볼",
+    "price": 25,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=믹서볼",
+    "category": "Kitchen"
+  },
+  {
+    "id": 67,
+    "name": "조리도구세트",
+    "price": 50,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=조리도구세트",
+    "category": "Kitchen"
+  },
+  {
+    "id": 68,
+    "name": "냄비",
+    "price": 35,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=냄비",
+    "category": "Kitchen"
+  },
+  {
+    "id": 69,
+    "name": "프라이팬",
+    "price": 40,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=프라이팬",
+    "category": "Kitchen"
+  },
+  {
+    "id": 70,
+    "name": "밥솥",
+    "price": 150,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=밥솥",
+    "category": "Kitchen"
+  },
+  {
+    "id": 71,
+    "name": "오븐",
+    "price": 300,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=오븐",
+    "category": "Kitchen"
+  },
+  {
+    "id": 72,
+    "name": "식기세척기",
+    "price": 400,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=식기세척기",
+    "category": "Kitchen"
+  },
+  {
+    "id": 73,
+    "name": "믹싱스푼",
+    "price": 10,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=믹싱스푼",
+    "category": "Kitchen"
+  },
+  {
+    "id": 74,
+    "name": "거품기",
+    "price": 15,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=거품기",
+    "category": "Kitchen"
+  },
+  {
+    "id": 75,
+    "name": "칼세트",
+    "price": 80,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=칼세트",
+    "category": "Kitchen"
+  },
+  {
+    "id": 76,
+    "name": "도마",
+    "price": 20,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=도마",
+    "category": "Kitchen"
+  },
+  {
+    "id": 77,
+    "name": "보온병",
+    "price": 25,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=보온병",
+    "category": "Kitchen"
+  },
+  {
+    "id": 78,
+    "name": "접시세트",
+    "price": 50,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=접시세트",
+    "category": "Kitchen"
+  },
+  {
+    "id": 79,
+    "name": "와인오프너",
+    "price": 15,
+    "imageUrl": "https://via.placeholder.com/150/FFA500/808080?text=와인오프너",
+    "category": "Kitchen"
+  },
+  {
+    "id": 80,
+    "name": "러닝머신",
+    "price": 600,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=러닝머신",
+    "category": "Fitness"
+  },
+  {
+    "id": 81,
+    "name": "덤벨세트",
+    "price": 100,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=덤벨세트",
+    "category": "Fitness"
+  },
+  {
+    "id": 82,
+    "name": "요가매트",
+    "price": 40,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=요가매트",
+    "category": "Fitness"
+  },
+  {
+    "id": 83,
+    "name": "사이클머신",
+    "price": 500,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=사이클머신",
+    "category": "Fitness"
+  },
+  {
+    "id": 84,
+    "name": "푸쉬업바",
+    "price": 25,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=푸쉬업바",
+    "category": "Fitness"
+  },
+  {
+    "id": 85,
+    "name": "케틀벨",
+    "price": 50,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=케틀벨",
+    "category": "Fitness"
+  },
+  {
+    "id": 86,
+    "name": "복근운동기구",
+    "price": 80,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=복근운동기구",
+    "category": "Fitness"
+  },
+  {
+    "id": 87,
+    "name": "점핑로프",
+    "price": 15,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=점핑로프",
+    "category": "Fitness"
+  },
+  {
+    "id": 88,
+    "name": "스트레칭밴드",
+    "price": 20,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=스트레칭밴드",
+    "category": "Fitness"
+  },
+  {
+    "id": 89,
+    "name": "아령",
+    "price": 30,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=아령",
+    "category": "Fitness"
+  },
+  {
+    "id": 90,
+    "name": "스테퍼",
+    "price": 70,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=스테퍼",
+    "category": "Fitness"
+  },
+  {
+    "id": 91,
+    "name": "헬스자전거",
+    "price": 150,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=헬스자전거",
+    "category": "Fitness"
+  },
+  {
+    "id": 92,
+    "name": "트위스트보드",
+    "price": 20,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=트위스트보드",
+    "category": "Fitness"
+  },
+  {
+    "id": 93,
+    "name": "피트니스볼",
+    "price": 25,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=피트니스볼",
+    "category": "Fitness"
+  },
+  {
+    "id": 94,
+    "name": "웨이트트레이너",
+    "price": 120,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=웨이트트레이너",
+    "category": "Fitness"
+  },
+  {
+    "id": 95,
+    "name": "런닝벨트",
+    "price": 15,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=런닝벨트",
+    "category": "Fitness"
+  },
+  {
+    "id": 96,
+    "name": "헬스장갑",
+    "price": 20,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=헬스장갑",
+    "category": "Fitness"
+  },
+  {
+    "id": 97,
+    "name": "운동화",
+    "price": 80,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=운동화",
+    "category": "Fitness"
+  },
+  {
+    "id": 98,
+    "name": "트레드밀",
+    "price": 700,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=트레드밀",
+    "category": "Fitness"
+  },
+  {
+    "id": 99,
+    "name": "바벨",
+    "price": 60,
+    "imageUrl": "https://via.placeholder.com/150/800080/808080?text=바벨",
+    "category": "Fitness"
+  }
+]
