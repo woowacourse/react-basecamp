@@ -1,7 +1,7 @@
 {
-  "name": "hooks",
-  "version": "0.0.1",
-  "description": "npm modules",
+  "name": "hooks-skiende74",
+  "version": "0.0.2",
+  "description": "hooks module for study",
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -17,6 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "hooks-skiende74": "^0.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -25,7 +26,7 @@
     "@testing-library/react": "^15.0.5",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.7",
-    "@types/react": "^18.2.66",
+    "@types/react": "^18.3.1",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
