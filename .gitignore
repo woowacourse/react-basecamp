@@ -27,5 +27,10 @@ dist-ssr
 *.sw?
 
 .env
-*storybook.log
-
+msw_
+msw_v0
+msw_v1
+msw_v2
+msw_v3
+msw_v4
+coupons
