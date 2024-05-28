@@ -98,22 +98,22 @@ describe("useProducts", () => {
       });
     });
 
-    // it("페이지네이션으로 추가 데이터를 불러올 때 로딩 상태를 표시한다.", async () => {
-    //   const { result } = renderHook(() => useProducts());
+    it("페이지네이션으로 추가 데이터를 불러올 때 로딩 상태를 표시한다.", async () => {
+      const { result } = renderHook(() => useProducts());
 
-    //   await waitFor(() => {
-    //     expect(result.current.loading).toBe(false);
-    //   });
+      await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+      });
 
-    //   act(() => {
-    //     result.current.fetchNextPage();
-    //   });
+      act(() => {
+        result.current.fetchNextPage();
+      });
 
-    //   expect(result.current.loading).toBe(true);
+      expect(result.current.loading).toBe(true);
 
-    //   await waitFor(() => {
-    //     expect(result.current.loading).toBe(false);
-    //   });
-    // });
+      await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+      });
+    });
   });
 });

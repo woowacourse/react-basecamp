@@ -26,6 +26,8 @@ export default function useProducts(): UseProductsResult {
 
   useEffect(() => {
     const getProducts = async () => {
+      setLoading(true);
+
       try {
         const data = await fetchProducts(page, 4);
         if (data.length === 0) {
