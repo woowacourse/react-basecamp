@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts } from '../api/products';
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
   price: number;
@@ -22,6 +22,7 @@ export default function useProducts(): UseProductsResult {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<unknown>(null);
+  const isLastPage = products.length === 100;
 
   useEffect(() => {
     const getProducts = async () => {
@@ -36,11 +37,11 @@ export default function useProducts(): UseProductsResult {
       }
     };
 
-    getProducts();
+    if (!isLastPage) getProducts();
   }, [page]);
 
   const fetchNextPage = () => {
-    setPage((prevPage) => prevPage + 1);
+    if (!isLastPage) setPage((prevPage) => prevPage + 1);
   };
 
   return { products, loading, error, page, fetchNextPage };
