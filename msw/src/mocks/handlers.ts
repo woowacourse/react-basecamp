@@ -1,7 +1,8 @@
 import { http, HttpResponse } from "msw";
+import products from "./products.json";
+import { PRODUCTS_ENDPOINT } from "../api/endpoints";
 
 export const handlers = [
-  http.get("http://example.com", () => {
-    return HttpResponse.json();
+    return HttpResponse.json(paginatedProducts);
   }),
 ];
