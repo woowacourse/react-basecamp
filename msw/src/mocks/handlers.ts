@@ -1,10 +1,9 @@
 import { http, HttpResponse } from "msw";
 import products from "./products.json";
-
-const API_URL = "http://woteco.com/products";
+import { PRODUCTS_ENDPOINT } from "../api/endpoints";
 
 export const handlers = [
-  http.get(API_URL, () => {
+  http.get(PRODUCTS_ENDPOINT, () => {
     return HttpResponse.json(products);
   }),
 ];

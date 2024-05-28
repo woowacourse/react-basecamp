@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-
-const API_URL = "http://woteco.com/products";
+import { PRODUCTS_ENDPOINT } from "../api/endpoints";
 
 interface Product {
   id: number;
@@ -19,7 +18,7 @@ export default function useProducts(): UseProductsResult {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch(API_URL);
+      const response = await fetch(PRODUCTS_ENDPOINT);
       const data = await response.json();
       setProducts(data);
     };
