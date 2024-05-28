@@ -27,8 +27,6 @@ dist-ssr
 *.sw?
 
 .env
-<<<<<<< HEAD
-=======
 msw_
 msw_v0
 msw_v1
@@ -36,4 +34,3 @@ msw_v2
 msw_v3
 msw_v4
 coupons
->>>>>>> 7a7eeb826d55c2239ac22a2fa1fa0ace870f74fb
