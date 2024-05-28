@@ -1,10 +1,28 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import React, { Suspense } from 'react';
+import CartItemCount from './components/CartItemCount';
+import AddToCartButton from './components/AddToCartButton';
+import RemoveFromCartButton from './components/RemoveFromCartButton';
+import CartTotalPrice from './components/CartTotalPrice';
+import './App.css';
+import ProductList from './components/ProductList';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './components/ErrorFallback';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+function App() {
+  return (
+    <div>
+      <h1>장바구니</h1>
+      <CartItemCount />
+      <AddToCartButton />
+      <RemoveFromCartButton />
+      <CartTotalPrice />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProductList />
+        </Suspense>
+      </ErrorBoundary>
+    </div>
+  );
+}
+
+export default App;
