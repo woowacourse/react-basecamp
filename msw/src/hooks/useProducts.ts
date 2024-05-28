@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { PRODUCTS_ENDPOINT } from "../api/endpoints";
+import { fetchProducts } from "../api/products";
 
 interface Product {
   id: number;
@@ -13,29 +13,34 @@ interface UseProductsResult {
   products: Product[];
   loading: boolean;
   error: unknown;
+  page: number;
+  fetchNextPage: () => void;
 }
 
 export default function useProducts(): UseProductsResult {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<unknown>(null);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const getProducts = async () => {
       try {
-        const response = await fetch(PRODUCTS_ENDPOINT);
-        const data = await response.json();
-        setProducts(data);
+        const data = await fetchProducts(page, 4);
+        setProducts((prevProducts) => [...prevProducts, ...data]);
       } catch (error) {
-        // 테스트 환경에서 status 500을 반환하는데 그걸 자동으로 에러로 처리해주는 것인가?
         setError(error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProducts();
-  }, []);
+    getProducts();
+  }, [page]);
 
-  return { products, loading, error };
+  const fetchNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  return { products, loading, error, page, fetchNextPage };
 }
