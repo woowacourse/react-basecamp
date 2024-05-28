@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 
 const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
@@ -21,6 +22,14 @@ const ImageGallery: React.FC = () => {
     // 3. 가져온 이미지를 상태(images)에 업데이트하세요.
     // 4. keyword가 존재할 때만 fetchImages 함수를 호출하세요.
   }, [keyword]);
+=======
+import React, { useState } from 'react';
+import useImageSearchWithPagination from '../useImageSearchWithPagination';
+
+const ImageGallery: React.FC = () => {
+  const [keyword, setKeyword] = useState('');
+  const { images, isLoading, error, currentPage, goToNextPage, goToPrevPage } = useImageSearchWithPagination(keyword);
+>>>>>>> 8e426340fb6c49e064b03304b7106981b824301e
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,6 +42,7 @@ const ImageGallery: React.FC = () => {
         <h1>Image Gallery</h1>
       </header>
       <section>
+<<<<<<< HEAD
         <form onSubmit={handleSubmit}>
           <label htmlFor="searchKeyword">검색:</label>
           <input
@@ -51,6 +61,31 @@ const ImageGallery: React.FC = () => {
             <p>{image.tags}</p>
           </article>
         ))}
+=======
+        <div>
+          <span>Page: {currentPage}</span>
+          <button onClick={goToPrevPage}>◀</button>
+          <button onClick={goToNextPage}>▶</button>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor='searchKeyword'>검색:</label>
+          <input type='text' id='searchKeyword' name='keyword' placeholder='키워드 입력' />
+          <button type='submit'>Search</button>
+        </form>
+      </section>
+      <section>
+        {isLoading && <p>Loading ...</p>}
+        {error && <p>{error.message}</p>}
+        {images.length === 0 && <p>No images found.</p>}
+        {!isLoading &&
+          !error &&
+          images.map((image) => (
+            <article key={image.id}>
+              <img src={image.webformatURL} alt={image.tags} />
+              <p>{image.tags}</p>
+            </article>
+          ))}
+>>>>>>> 8e426340fb6c49e064b03304b7106981b824301e
       </section>
     </>
   );

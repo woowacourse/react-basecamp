@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -33,3 +34,34 @@ function App() {
 }
 
 export default App
+=======
+import { Suspense } from 'react';
+import './App.css';
+import AddToCartButton from './components/AddToCartButton';
+import CartItemCount from './components/CartItemCount';
+import CartTotalPrice from './components/CartTotalPrice';
+import RemoveFromCartButton from './components/RemoveFromCartButton';
+import ProductList from './components/ProductList';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './components/ErrorFallback';
+
+function App() {
+  return (
+    <div>
+      <h1>장바구니</h1>
+      <CartItemCount />
+      <AddToCartButton />
+      <RemoveFromCartButton />
+      <CartTotalPrice />
+
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProductList />
+        </Suspense>
+      </ErrorBoundary>
+    </div>
+  );
+}
+
+export default App;
+>>>>>>> 8e426340fb6c49e064b03304b7106981b824301e
