@@ -31,10 +31,9 @@ export default function useProducts(): UseProductsResult {
         setLoading(true);
         if (isLastPage) return;
         const data = await fetchProducts(page, 4);
-        if (data.length < 4) {
-          setIsLastPage(true);
-          setPage(prevPage => prevPage - 1);
-        }
+        if (data.length < 4) setIsLastPage(true);
+
+        if (data.length === 0) setPage(prevPage => prevPage - 1);
 
         setProducts(prevProducts => [...prevProducts, ...data]);
       } catch (error) {
@@ -48,7 +47,6 @@ export default function useProducts(): UseProductsResult {
   }, [page, isLastPage]);
 
   const fetchNextPage = () => {
-    if (isLastPage) return;
     setPage(prevPage => (isLastPage ? prevPage : prevPage + 1));
   };
 
