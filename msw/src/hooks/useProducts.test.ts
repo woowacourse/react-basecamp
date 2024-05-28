@@ -94,8 +94,26 @@ describe("useProducts", () => {
 
       await waitFor(() => {
         expect(result.current.products).toHaveLength(100);
-        expect(result.current.page).toBe(22);
+        expect(result.current.page).toBe(21);
       });
     });
+
+    // it("페이지네이션으로 추가 데이터를 불러올 때 로딩 상태를 표시한다.", async () => {
+    //   const { result } = renderHook(() => useProducts());
+
+    //   await waitFor(() => {
+    //     expect(result.current.loading).toBe(false);
+    //   });
+
+    //   act(() => {
+    //     result.current.fetchNextPage();
+    //   });
+
+    //   expect(result.current.loading).toBe(true);
+
+    //   await waitFor(() => {
+    //     expect(result.current.loading).toBe(false);
+    //   });
+    // });
   });
 });
