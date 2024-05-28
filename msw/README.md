@@ -70,10 +70,10 @@ MSW는 테스트 중 외부 API 요청을 모킹하기 위해 사용됩니다. M
 **`src/mocks/handlers.ts`** 파일을 생성하고 API 요청을 처리할 핸들러를 작성합니다:
 
 ```tsx
-import { http, HttpResponse } from "msw";
+import { http, HttpResponse } from 'msw';
 
 export const handlers = [
-  http.get("http://example.com", () => {
+  http.get('http://example.com', () => {
     return HttpResponse.json();
   }),
 ];
@@ -86,8 +86,8 @@ export const handlers = [
 **`src/mocks/server.ts`** 파일을 생성하고 다음과 같이 설정합니다:
 
 ```tsx
-import { setupServer } from "msw/node";
-import { handlers } from "./handlers";
+import { setupServer } from 'msw/node';
+import { handlers } from './handlers';
 
 export const server = setupServer(...handlers);
 ```
@@ -99,19 +99,19 @@ export const server = setupServer(...handlers);
 **`vitest.config.ts`** 파일을 생성하여 Vitest와 Vite 설정을 병합합니다:
 
 ```tsx
-import { mergeConfig } from "vite";
-import { defineConfig } from "vitest/config";
-import viteConfig from "./vite.config.ts";
+import { mergeConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
+import viteConfig from './vite.config.ts';
 
 export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
       globals: true,
-      environment: "jsdom",
-      setupFiles: ["./vitest.setup.ts"],
+      environment: 'jsdom',
+      setupFiles: ['./vitest.setup.ts'],
     },
-  })
+  }),
 );
 ```
 
@@ -124,12 +124,12 @@ export default mergeConfig(
 **`vitest.setup.ts`** 파일을 생성하고 설정을 추가합니다:
 
 ```tsx
-import { beforeAll, afterEach, afterAll } from "vitest";
-import { server } from "./src/mocks/server";
+import { beforeAll, afterEach, afterAll } from 'vitest';
+import { server } from './src/mocks/server';
 
 // 모든 테스트 케이스가 실행되기 전에 한 번 실행되는 함수
 beforeAll(() => {
-  server.listen({ onUnhandledRequest: "error" });
+  server.listen({ onUnhandledRequest: 'error' });
 });
 
 // 각 테스트 케이스가 종료된 후에 실행되는 함수
@@ -172,12 +172,12 @@ afterAll(() => {
 먼저 `src/hooks/useProducts.test.ts` 파일을 생성하고 다음과 같이 테스트 코드를 작성합니다.
 
 ```tsx
-import { renderHook, waitFor } from "@testing-library/react";
-import useProducts from "./useProducts";
+import { renderHook, waitFor } from '@testing-library/react';
+import useProducts from './useProducts';
 
-describe("useProducts", () => {
-  describe("상품 목록 조회", () => {
-    it("상품 목록을 조회한다.", async () => {
+describe('useProducts', () => {
+  describe('상품 목록 조회', () => {
+    it('상품 목록을 조회한다.', async () => {
       const { result } = renderHook(() => useProducts());
 
       await waitFor(() => {
@@ -216,10 +216,10 @@ npm run test
 `src/mocks/handlers.ts` 파일을 생성하고 다음과 같이 모킹 핸들러를 작성합니다.
 
 ```tsx
-import { http, HttpResponse } from "msw";
-import products from "./products.json";
+import { http, HttpResponse } from 'msw';
+import products from './products.json';
 
-const API_URL = "http://woteco.com/products";
+const API_URL = 'http://woteco.com/products';
 
 export const handlers = [
   http.get(API_URL, () => {
@@ -254,9 +254,9 @@ export const handlers = [
 **`src/hooks/useProducts.ts`** 파일을 생성하고 다음과 같이 코드를 작성합니다:
 
 ```tsx
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-const API_URL = "http://woteco.com/products";
+const API_URL = 'http://woteco.com/products';
 
 interface Product {
   id: number;
@@ -312,7 +312,7 @@ export default function useProducts(): UseProductsResult {
 **`src/api/endpoints.ts`** 파일을 생성하고 다음과 같이 **`BASE_URL`**과 **`PRODUCTS_ENDPOINT`** 상수를 선언합니다.
 
 ```tsx
-export const BASE_URL = "http://woteco.com";
+export const BASE_URL = 'http://woteco.com';
 export const PRODUCTS_ENDPOINT = `${BASE_URL}/products`;
 ```
 
@@ -322,7 +322,7 @@ export const PRODUCTS_ENDPOINT = `${BASE_URL}/products`;
 
 ```tsx
 // useProducts.ts
-import { PRODUCTS_ENDPOINT } from "../api/endpoints";
+import { PRODUCTS_ENDPOINT } from '../api/endpoints';
 
 // ...
 
@@ -338,7 +338,7 @@ useEffect(() => {
 
 ```tsx
 // handlers.ts
-import { PRODUCTS_ENDPOINT } from "../api/endpoints";
+import { PRODUCTS_ENDPOINT } from '../api/endpoints';
 
 // ...
 
@@ -364,11 +364,11 @@ export const handlers = [
 **`src/hooks/useProducts.test.ts`** 파일에 다음 테스트 케이스를 추가합니다:
 
 ```tsx
-describe("useProducts", () => {
+describe('useProducts', () => {
   // ... 생략 ...
 
-  describe("상품 목록 조회", () => {
-    it("상품 목록 조회 중 로딩 상태", () => {
+  describe('상품 목록 조회', () => {
+    it('상품 목록 조회 중 로딩 상태', () => {
       const { result } = renderHook(() => useProducts());
 
       expect(result.current.loading).toBe(true);
@@ -429,18 +429,18 @@ export default function useProducts(): UseProductsResult {
 먼저 **`src/hooks/useProducts.test.ts`** 파일에 다음 테스트 케이스를 추가합니다:
 
 ```tsx
-import { server } from "../mocks/server";
-import { http, HttpResponse } from "msw";
-import { PRODUCTS_ENDPOINT } from "../api/endpoints";
+import { server } from '../mocks/server';
+import { http, HttpResponse } from 'msw';
+import { PRODUCTS_ENDPOINT } from '../api/endpoints';
 
-describe("useProducts", () => {
+describe('useProducts', () => {
   // ... 생략 ...
-  describe("상품 목록 조회", () => {
-    it("상품 목록 조회 중 에러 상태", async () => {
+  describe('상품 목록 조회', () => {
+    it('상품 목록 조회 중 에러 상태', async () => {
       server.use(
         http.get(PRODUCTS_ENDPOINT, () => {
           return new HttpResponse(null, { status: 500 });
-        })
+        }),
       );
 
       const { result } = renderHook(() => useProducts());
@@ -521,11 +521,11 @@ export default function useProducts(): UseProductsResult {
 초기 상품 목록 조회에 대한 테스트를 작성해 보겠습니다. 이를 통해 페이지네이션의 시작점을 명확히 할 수 있습니다.
 
 ```tsx
-describe("useProducts", () => {
+describe('useProducts', () => {
   // ... 생략 ...
 
-  describe("페이지네이션", () => {
-    it("초기에 첫 페이지의 상품 20개를 불러온다", async () => {
+  describe('페이지네이션', () => {
+    it('초기에 첫 페이지의 상품 20개를 불러온다', async () => {
       const { result } = renderHook(() => useProducts());
 
       await waitFor(() => {
@@ -544,17 +544,17 @@ describe("useProducts", () => {
 `handlers.ts` 파일에서 페이지네이션을 처리하도록 수정해야 합니다. 현재는 요청이 들어오면 전체 상품 데이터를 응답으로 보내고 있습니다. 이를 요청한 페이지와 limit에 맞게 데이터를 필터링하여 반환하도록 변경합니다.
 
 ```tsx
-import { http, HttpResponse } from "msw";
-import products from "./products.json";
-import { PRODUCTS_ENDPOINT } from "../api/endpoints";
+import { http, HttpResponse } from 'msw';
+import products from './products.json';
+import { PRODUCTS_ENDPOINT } from '../api/endpoints';
 
 export const handlers = [
   http.get(PRODUCTS_ENDPOINT, ({ request }) => {
     const url = new URL(request.url);
 
-    const page = Number(url.searchParams.get("page") || "1");
+    const page = Number(url.searchParams.get('page') || '1');
     const limit = page === 1 ? 20 : 4;
-    const start = page === 1 ? 0 : (page - 1) * 4 + 20;
+    const start = page === 1 ? 0 : (page - 2) * 4 + 20;
     const end = start + limit;
 
     const paginatedProducts = products.slice(start, end);
@@ -585,9 +585,7 @@ export default function useProducts(): UseProductsResult {
     const fetchProducts = async () => {
       try {
         const limit = page === 1 ? 20 : 4;
-        const response = await fetch(
-          `${PRODUCTS_ENDPOINT}?page=${page}&limit=${limit}`
-        );
+        const response = await fetch(`${PRODUCTS_ENDPOINT}?page=${page}&limit=${limit}`);
         // ... 생략 ...
       } catch (error) {
         setError(error);
@@ -610,15 +608,15 @@ export default function useProducts(): UseProductsResult {
 `src/hooks/useProducts.test.ts` 파일에 다음 테스트 케이스를 추가합니다.
 
 ```tsx
-import { act, renderHook, waitFor } from "@testing-library/react";
+import { act, renderHook, waitFor } from '@testing-library/react';
 
-describe("useProducts", () => {
+describe('useProducts', () => {
   // ... 생략 ...
 
-  describe("페이지네이션", () => {
+  describe('페이지네이션', () => {
     // ... 생략 ...
 
-    it("다음 페이지의 상품 4개를 추가로 불러온다", async () => {
+    it('다음 페이지의 상품 4개를 추가로 불러온다', async () => {
       const { result } = renderHook(() => useProducts());
 
       await waitFor(() => {
@@ -648,8 +646,8 @@ describe("useProducts", () => {
 `src/hooks/useProducts.ts` 파일을 다음과 같이 수정해 주세요.
 
 ```tsx
-import { useState, useEffect } from "react";
-import { PRODUCTS_ENDPOINT } from "../api/endpoints";
+import { useState, useEffect } from 'react';
+import { PRODUCTS_ENDPOINT } from '../api/endpoints';
 
 // ... 생략 ...
 
@@ -696,15 +694,13 @@ export default function useProducts(): UseProductsResult {
 `src/api/products.ts` 파일을 생성하고 다음과 같이 `fetchProducts` 함수를 선언합니다.
 
 ```tsx
-import { PRODUCTS_ENDPOINT } from "./endpoints";
+import { PRODUCTS_ENDPOINT } from './endpoints';
 
 export async function fetchProducts(page: number, limit: number) {
-  const response = await fetch(
-    `${PRODUCTS_ENDPOINT}?page=${page}&limit=${limit}`
-  );
+  const response = await fetch(`${PRODUCTS_ENDPOINT}?page=${page}&limit=${limit}`);
 
   if (!response.ok) {
-    throw new Error("Failed to fetch products");
+    throw new Error('Failed to fetch products');
   }
 
   const data = await response.json();
@@ -758,7 +754,7 @@ export default function useProducts(): UseProductsResult {
 `src/hooks/useProducts.test.ts` 파일에 다음 테스트 케이스를 추가합니다.
 
 ```tsx
-it("모든 페이지의 상품을 불러오면 더 이상 요청하지 않는다.", async () => {
+it('모든 페이지의 상품을 불러오면 더 이상 요청하지 않는다.', async () => {
   const { result } = renderHook(() => useProducts());
 
   await waitFor(() => {
@@ -815,7 +811,7 @@ it("모든 페이지의 상품을 불러오면 더 이상 요청하지 않는다
 `src/hooks/useProducts.test.ts` 파일에 다음 테스트 케이스를 추가합니다.
 
 ```tsx
-it("페이지네이션으로 추가 데이터를 불러올 때 로딩 상태를 표시한다.", async () => {
+it('페이지네이션으로 추가 데이터를 불러올 때 로딩 상태를 표시한다.', async () => {
   const { result } = renderHook(() => useProducts());
 
   await waitFor(() => {
