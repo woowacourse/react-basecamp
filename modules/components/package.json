@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
+  "name": "compoents",
+  "version": "0.0.1",
+  "description": "npm modules",
+=======
   "name": "@chysis/alert-button",
   "version": "0.0.0",
   "description": "description",
+>>>>>>> 8e426340fb6c49e064b03304b7106981b824301e
   "type": "module",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -18,7 +24,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
     "@chysis/alert-button": "^0.0.0",
+>>>>>>> 8e426340fb6c49e064b03304b7106981b824301e
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
