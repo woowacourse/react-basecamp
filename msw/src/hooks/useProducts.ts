@@ -28,7 +28,8 @@ export default function useProducts(): UseProductsResult {
     const getProducts = async () => {
       try {
         setLoading(true);
-        const data = await fetchProducts(page, 4);
+        const limit = page === 1 ? 20 : 4;
+        const data = await fetchProducts(page, limit);
 
         setProducts((prevProducts) => [...prevProducts, ...data]);
       } catch (error) {
