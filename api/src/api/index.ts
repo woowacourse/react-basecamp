@@ -2,14 +2,11 @@ import { Product, CartItem } from '../types';
 import { generateBasicToken } from '../utils/auth';
 
 const API_URL = import.meta.env.VITE_API_URL;
-const USER_ID = import.meta.env.VITE_USER_ID;
 const USER_PASSWORD = import.meta.env.VITE_USER_PASSWORD;
+const USER_ID = import.meta.env.VITE_USER_ID;
 
 export async function fetchProducts(): Promise<Product[]> {
-  const token = generateBasicToken(
-    import.meta.env.VITE_USER_ID,
-    import.meta.env.VITE_USER_PASSWORD
-  );
+  const token = generateBasicToken(USER_ID, USER_PASSWORD);
   const response = await fetch(`${API_URL}/products`, {
     method: 'GET',
     headers: { Authorization: token },
@@ -51,19 +48,5 @@ export async function addCartItem(productId: number): Promise<void> {
 
   if (!response.ok) {
     throw new Error('Failed to add cart item');
-  }
-}
-
-export async function removeCartItem(cartItemId: number): Promise<void> {
-  const token = generateBasicToken(USER_ID, USER_PASSWORD);
-  const response = await fetch(`${API_URL}/cart-items/${cartItemId}`, {
-    method: 'DELETE',
-    headers: {
-      Authorization: token,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error('Failed to remove cart item');
   }
 }

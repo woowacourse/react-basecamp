@@ -2,10 +2,9 @@ import { CartItem } from '../types';
 
 interface CartProps {
   items: CartItem[];
-  onRemoveItem: (cartItemId: number) => void;
 }
 
-function Cart({ items, onRemoveItem }: CartProps) {
+function Cart({ items }: CartProps) {
   return (
     <div>
       <h2>장바구니</h2>
@@ -16,7 +15,6 @@ function Cart({ items, onRemoveItem }: CartProps) {
           {items.map((item) => (
             <li key={item.id}>
               {item.product.name} - {item.product.price}원 ({item.quantity}개)
-              <button onClick={() => onRemoveItem(item.id)}>삭제</button>
             </li>
           ))}
         </ul>
