@@ -26,7 +26,7 @@ npm run storybook
 
 ```tsx
 export default function Display() {
-  return <div>0</div>;
+	return <div>0</div>;
 }
 ```
 
@@ -37,12 +37,12 @@ export default function Display() {
 2. `Display.stories.tsx`에 다음 코드를 작성합니다.
 
 ```tsx
-import type { Meta, StoryObj } from "@storybook/react";
-import Display from "../components/Display";
+import type { Meta, StoryObj } from '@storybook/react';
+import Display from '../components/Display';
 
 const meta = {
-  title: "Display",
-  component: Display,
+	title: 'Display',
+	component: Display,
 } satisfies Meta<typeof Display>;
 
 export default meta;
