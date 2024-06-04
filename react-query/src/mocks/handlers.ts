@@ -15,11 +15,7 @@ export const handlers = [
       return HttpResponse.json(newCartItem, { status: 201 });
     }
   ),
-  http.delete(
-    `${API_ENDPOINTS.CART}/:itemId`,
-    async ({ params }: { params: { itemId: string } }) => {
-      const { itemId } = params;
-      return HttpResponse.json(itemId, { status: 204 });
-    }
-  ),
+  http.delete(`${API_ENDPOINTS.CART}/:itemId`, async () => {
+    return HttpResponse.json({ body: null }, { status: 204 });
+  }),
 ];
