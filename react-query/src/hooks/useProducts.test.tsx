@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { renderHook, waitFor } from '@testing-library/react';
-import { Product, useProducts } from './useProducts';
+import { useProducts } from './useProducts';
+import { Product } from '../types';
 
 const queryClient = new QueryClient();
 
