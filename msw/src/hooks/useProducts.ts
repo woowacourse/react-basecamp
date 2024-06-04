@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { PRODUCTS_ENDPOINT } from '../api/endpoints';
 import { fetchProducts } from '../api/products';
 
 interface Product {
