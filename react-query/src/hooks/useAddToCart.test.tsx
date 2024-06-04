@@ -20,7 +20,7 @@ describe("useAddToCart 테스트", () => {
     });
 
     await waitFor(() => {
-      expect(result.current.isSuccess).toBe(true);
+      expect(result.current.isPending).toBe(false);
     });
 
     expect(result.current.data).toEqual(CART_ITEM_TO_POST);
