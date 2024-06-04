@@ -17,7 +17,7 @@ describe("useAddToCart", () => {
     });
 
     await waitFor(() => expect(result.current.isSuccess).toBe(true));
-    console.log(result.current);
+
     expect(result.current.data).toEqual<CartItem>({
       id: 3,
       productId: 1,
