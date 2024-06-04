@@ -7,8 +7,11 @@ const wrapper = ({ children }: { children: React.ReactNode }) => (
   <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 );
 describe("useDeleteFromCart 테스트", async () => {
-  const { result } = renderHook(useDeleteFromCart, { wrapper });
+  it("a", async () => {
+    const { result } = renderHook(useDeleteFromCart, { wrapper });
 
-  act(() => result.current.mutate(3));
-  await waitFor(() => expect(result.current.isSuccess).toBe(true));
+    act(() => result.current.mutate(3));
+    await waitFor(() => expect(result.current.isPending).toBe(false));
+    await waitFor(() => expect(result.current.isSuccess).toBe(true));
+  });
 });
