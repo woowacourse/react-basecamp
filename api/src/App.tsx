@@ -16,8 +16,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-  console.log(import.meta.env.VITE_API_URL);
-
   const handleAddToCart = async (productId: number) => {
     try {
       await addCartItem(productId);
@@ -67,13 +65,13 @@ function App() {
     return <div>Error: {error.message}</div>;
   }
 
-return (
-  <div>
-    <h1>상품 목록 및 장바구니</h1>
-    <ProductList products={products} onAddToCart={handleAddToCart} />
-    <Cart items={cartItems} onRemoveItem={handleRemoveItem} />
-  </div>
-);
+  return (
+    <div>
+      <h1>상품 목록 및 장바구니</h1>
+      <ProductList products={products} onAddToCart={handleAddToCart} />
+      <Cart items={cartItems} onRemoveItem={handleRemoveItem} />
+    </div>
+  );
 }
 
 export default App;
