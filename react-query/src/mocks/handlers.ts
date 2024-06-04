@@ -15,4 +15,7 @@ export const handlers = [
       return HttpResponse.json(newCartItem, { status: 201 });
     }
   ),
+  http.delete(`${API_ENDPOINTS.CART}/:id`, async ({ params }) => {
+    return HttpResponse.json(`삭제되었습니다.${params.id}`, { status: 201 });
+  }),
 ];
