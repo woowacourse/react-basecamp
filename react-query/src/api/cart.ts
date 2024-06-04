@@ -11,3 +11,13 @@ export async function addToCart(item: CartItem): Promise<CartItem> {
   });
   return await response.json();
 }
+
+export async function removeFromCart(productId: number): Promise<void> {
+  const response = await fetch(`${API_ENDPOINTS.CART}/${productId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return await response.json();
+}

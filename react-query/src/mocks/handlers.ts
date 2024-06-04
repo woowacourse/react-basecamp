@@ -15,4 +15,10 @@ export const handlers = [
       return HttpResponse.json(newCartItem, { status: 201 });
     }
   ),
+
+  http.delete(`${API_ENDPOINTS.CART}/:id`, async ({ request }) => {
+    const urlParts = request.url.split("/");
+    const deletedItemId = Number(urlParts[urlParts.length - 1]);
+    return HttpResponse.json({ deletedItemId }, { status: 200 });
+  }),
 ];
