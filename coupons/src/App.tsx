@@ -1,35 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-function App() {
-  const [count, setCount] = useState(0)
+import { useState } from 'react';
+
+export type State = { counter: number };
+
+let state: State = {
+  counter: 0,
+};
+
+export function get(): State {
+  return state;
+}
+
+type Initializer<T> = T extends any ? T | ((prev: T) => T) : never;
+
+export function set<T>(nextState: Initializer<T>) {
+  state = typeof nextState === 'function' ? nextState(state) : nextState;
+}
+
+function Counter1() {
+  const state = get();
+
+  const [count, setCount] = useState(state);
+
+  function handleClick() {
+    set((prev: State) => {
+      const newState = { counter: prev.counter + 1 };
+
+      setCount(newState);
+
+      return newState;
+    });
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h3>{count.counter}</h3>
+      <button onClick={handleClick}>+</button>
     </>
-  )
+  );
 }
 
-export default App
+function Counter2() {
+  const state = get();
+
+  const [count, setCount] = useState(state);
+
+  function handleClick() {
+    set((prev: State) => {
+      const newState = { counter: prev.counter + 1 };
+
+      setCount(newState);
+
+      return newState;
+    });
+  }
+
+  return (
+    <>
+      <h3>{count.counter}</h3>
+      <button onClick={handleClick}>+</button>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Counter1 />
+      <Counter2 />
+    </>
+  );
+}
+
+export default App;
