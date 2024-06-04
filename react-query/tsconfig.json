@@ -18,14 +18,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-
-    /* Testing */
-    "types": ["jest"],
-    "esModuleInterop": true
+    "noFallthroughCasesInSwitch": true
   },
-
-  "include": ["src", "vitest.config.ts", "vitest.setup.ts"],
-
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
