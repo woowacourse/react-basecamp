@@ -15,6 +15,7 @@ function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
+
   const handleAddToCart = async (productId: number) => {
     try {
       await addCartItem(productId);
