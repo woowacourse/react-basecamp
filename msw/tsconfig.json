@@ -24,6 +24,8 @@
     "types": ["jest"],
     "esModuleInterop": true
   },
-  "include": ["src"],
+
+  "include": ["src", "vitest.config.ts", "vitest.setup.ts"],
+
   "references": [{ "path": "./tsconfig.node.json" }]
 }
