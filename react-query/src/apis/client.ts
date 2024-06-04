@@ -1,4 +1,12 @@
 export const apiClient = {
+  async post<T>(URL: string, data: object) {
+    const requestInit = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) };
+    return await apiClient.__fetch<T>(URL, requestInit);
+  },
+  async get<T>(URL: string) {
+    return await apiClient.__fetch<T>(URL);
+  },
+
   async __fetch<T>(URL: string, requestInit: RequestInit = { method: "GET" }): Promise<T> {
     const response = await fetch(URL, requestInit);
     if (!response.ok) {
