@@ -12,3 +12,9 @@ export async function addToCart(item: CartItem): Promise<CartItem> {
 
   return await response.json();
 }
+
+export async function deleteToCart(cartId: number) {
+  await fetch(`${API_ENDPOINTS.CART}/${cartId}`, {
+    method: 'DELETE',
+  });
+}

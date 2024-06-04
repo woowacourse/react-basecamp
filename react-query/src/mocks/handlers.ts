@@ -8,9 +8,13 @@ export const handlers = [
     return HttpResponse.json(products);
   }),
 
-  http.post(`${API_ENDPOINTS.CART}`, async ({ request }: { request: { json: () => Promise<CartItem> } }) => {
+  http.post(API_ENDPOINTS.CART, async ({ request }: { request: { json: () => Promise<CartItem> } }) => {
     const newCartItem = await request.json();
 
     return HttpResponse.json(newCartItem, { status: 201 });
+  }),
+
+  http.delete(`${API_ENDPOINTS.CART}/:id`, async () => {
+    return new HttpResponse(null, { status: 204 });
   }),
 ];
